@@ -1,0 +1,433 @@
+.first
+    background: url('../img/first-bg.png') center center/cover no-repeat
+    padding-top: 167px
+    height: 1200px
+    .container
+        z-index: 10
+        position: relative
+    &__title    
+        font-size: 63px
+        text-transform: uppercase
+        color: #3f3f3f
+        font-family: "Har-Bold"
+        margin-bottom: 20px
+        span
+            color: #4b8a3b
+    &__subtitle
+        font-size: 18px
+        background: #7ab36c
+        padding: 6px 17px
+        color: #fff
+        width: max-content
+    &__features
+        position: relative
+    &__item
+        position: absolute
+        &::before
+            content: ''
+            display: block
+            width: 1px 
+            height: 185px
+            background: #7ab36c
+            opacity: .15
+        &--second
+            left: 144px
+            &::before
+                height: 73px
+        &--third
+            left: 324px
+            &::before
+                height: 186px
+        &--fourth
+            left: 495px
+            &::before
+                height: 75px
+        &--five
+            left: 639px
+            &::before
+                height: 186px
+    &__itemText
+        display: flex
+        font-size: 17px
+        align-items: center
+        position: relative
+        &::before
+            content: ''
+            display: block
+            height: 69px
+            width: 4px
+            background: #7ab36c
+            margin-right: 27px
+    &__itemNum
+        position: absolute
+        left: 9px
+        top: 2px
+        font-size: 17px
+        color: rgba(0, 0, 0, .3)
+    &__bigText
+        position: absolute
+        transform: rotate(-90deg)
+        top: 337px
+        left: -460px
+    &__catalog
+        position: absolute
+        top: 648px
+        right: 0
+        display: flex
+    &__catalogItem
+        display: flex
+        flex-direction: column
+        img
+            width: 183px
+        &--second
+            img
+                width: 238px
+        &--small
+            margin-top: 120px
+            margin-right: -70px
+    &__catalogBlock
+        display: flex
+        flex-direction: column
+        padding-left: 21px
+        position: relative
+        &--big
+            margin-left: 102px
+        &--small
+            margin-left: 67px
+        &::before
+            content: ''
+            position: absolute
+            left: 0
+            display: block
+            height: 100%
+            width: 4px
+            background: #7ab36c
+    &__catalogText
+        font-size: 17px
+        margin-bottom: 8px
+
+.product-list
+    &__title
+        margin-bottom: 116px
+    &__item
+        border: solid 3px rgba(122, 179, 108, .3)
+        padding: 152px 30px 55px 30px
+        position: relative
+        margin: 0 40px
+    &__image
+        position: absolute
+        top: -50%
+        left: -50%
+        transform: translate(50%, 50%)
+    &__video
+        position: absolute
+        right: 0
+        top: 0
+        background-color: #d7e8d3
+        width: 90px
+        height: 90px
+        svg
+            display: block
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+    &__documentation
+        padding: 19px 98px
+        border: solid 1px #000000
+        background-color: #4b8a3b
+        font-size: 17px
+        color: #4b8a3b
+
+.documentation
+    margin-bottom: 230px
+    &__title
+        margin-bottom: 158px
+    &__block
+        border: solid 10px rgba(122, 179, 108, .3)
+        padding: 50px 50px 50px 350px
+        margin-left: 240px
+        display: flex
+        position: relative
+    &__all
+        margin-left: auto
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        span
+            font-size: 17px
+            margin-bottom: 17px
+    &__image
+        img
+            position: absolute
+            left: -200px
+            top: -100px
+    &__list
+        display: flex
+        flex-direction: column
+        li
+            display: flex
+            align-items: center
+            &::before
+                content: ''
+                opacity: .5
+                display: block
+                width: 75px
+                height: 2px
+                margin-right: 14px
+                background: #7ab36c
+            &:not(:last-child)
+                margin-bottom: 30px
+            svg
+                width: 10px
+                height: auto
+                margin-left: 18px
+                fill: #4b8a3b
+
+.news
+    margin-bottom: 84px
+    &--page
+        margin-bottom: 30px
+    .container  
+        position: relative
+    &__bigText
+        position: absolute
+        transform: rotate(-90deg)
+        top: 140px
+        left: -280px
+        font-size: 80px
+        -webkit-text-stroke: 1px #7ab36c
+        opacity: .65
+    &__nav
+        margin-bottom: 43px 
+        display: flex
+        align-items: flex-end
+    &__all
+        margin-left: auto
+        color: #4b8a3b
+        font-size: 17px
+        svg
+            width: 10px
+            margin-left: 16px
+            height: auto
+            fill: #4b8a3b
+    &__block
+        display: flex
+        flex-direction: column
+    &__item
+        display: flex
+        flex-direction: column
+        position: relative
+        padding: 25px 30px 25px 275px
+        border: 3px solid  rgba(122, 179, 108, .3)
+        min-height: 219px
+        justify-content: center
+        margin-left: 23px
+        &:not(:last-child)
+            margin-bottom: 30px
+    &__date
+        position: absolute
+        bottom: 0
+        left: 0
+        background: #4b8a3b
+        padding: 6px 15px
+        color: #fff
+    &__image
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: -23px
+    &__itemTitle
+        font-size: 20px
+        margin-bottom: 30px
+    &__itemText
+        p
+            font-size: 15px
+            &:not(:last-child)
+                margin-bottom: 20px
+    &__info
+        display: flex
+        margin-top: 10px
+        border-top: 1px solid #d9d9d9
+        justify-content: space-between
+        padding-top: 20px
+        align-items: center
+        span
+            font-size: 15px
+        a
+            font-size: 17px
+            color: #7ab36c
+            svg
+                width: 10px
+                height: auto
+                fill: #7ab36c
+
+.completed
+    margin-bottom: 50px
+    &__block
+        display: grid
+        grid-template-columns: 1fr
+        grid-gap: 88px
+    &__item
+        display: flex
+        flex-direction: column
+        margin-left:  auto
+        width: 817px
+    &__box
+        border: 6px solid  rgba(122, 179, 108, .3)
+        padding: 45px 40px 45px 245px
+        position: relative
+        transition: .4s
+        height: auto
+    &__nav
+        opacity: 0
+        height: 0
+        transition: .3s
+        .prev
+            position: absolute
+            left: -200px
+            top: 100%
+            width: 20px
+            height: auto
+            transform: rotate(180deg)
+        .next
+            position: absolute
+            left: -100px
+            width: 20px
+            height: auto
+        img
+            margin: 0 10px
+    &__itemTitle
+        font-size: 40px
+        line-height: 100%
+        margin-left: 245px
+        text-transform: uppercase
+        color: #454545
+        font-family: "Har-Bold"
+    &__itemSubtitle
+        font-size: 25px
+        line-height: 100%
+        margin-bottom: 30px
+        margin-left: 245px
+        color: #454545
+    &__boxTitle
+        font-size: 17px
+        margin-bottom: 26px
+    &__boxText
+        font-size: 17px
+    &__boxImage
+        position: absolute
+        left: -330px
+        top: -100px
+        img
+            width: 510px
+            height: 240px
+            object-fit: cover
+            transition: .4s
+    &__open
+        position: absolute
+        right: -6px
+        top: -6px
+        height: 54px
+        width: 54px
+        background: #d7e8d3
+        cursor: pointer
+        svg
+            width: 10px
+            height: auto
+            fill: #7ab36c
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+    &__air
+        height: 0
+        transition: .4s
+    .openCompletedProject
+        opacity: 1
+        height: 150px
+        margin-top: 94px
+    &__info
+        display: flex
+        margin-top: 10px
+        border-top: 1px solid #d9d9d9
+        justify-content: space-between
+        padding-top: 20px
+        align-items: center
+        span
+            font-size: 15px
+        a
+            font-size: 17px
+            color: #7ab36c
+            margin-left: auto
+            svg
+                width: 10px
+                height: auto
+                fill: #7ab36c
+
+    
+.contact
+    display: flex
+    position: relative
+    margin-bottom: 43px
+    &__img
+        position: absolute
+        left: 0
+        z-index: 2
+        width: 50%
+        img
+            display: block
+    &__block
+        display: flex
+        flex-direction: column
+        margin-left: 50%
+    &__title
+        margin-top: 50px
+        margin-bottom: 65px
+        margin-left: 33px
+    &__rect
+        padding: 50px 150px 42px 70px
+        border: 10px solid  rgba(122, 179, 108, .3)
+        margin-left: -10px
+        z-index: 1
+        &--page
+            margin-top: 100px
+        ul
+            display: flex
+            flex-direction: column
+            li
+                display: flex
+                flex-direction: column
+                
+                &:not(:last-child)
+                    margin-bottom: 15px
+                a
+                    font-size: 17px
+                span
+                    font-size: 17px
+                    display: flex
+                    align-items: center
+                    position: relative
+                    &::before
+                        content: ''
+                        background: #9c9c9c
+                        display: block
+                        width: 6px
+                        height: 6px
+                        border-radius: 50%
+                        position: absolute
+                        left: -14px
+    &__mail
+        color: #d3362f
+        text-decoration: underline
+
+.contact-map
+    margin-top: 160px
+    margin-bottom: 20px
+    &__image
+        width: 100%
+        img
+            width: 100%
+    &__title
+        margin-bottom: 

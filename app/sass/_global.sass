@@ -1,0 +1,212 @@
+html,
+body 
+	height: 100%
+	font-family: "Har-Regular"
+	color: #000
+
+.wrapper 
+	display: flex
+	flex-direction: column
+	min-height: 100%
+
+.main 
+	word-wrap: break-word
+	flex: 1 0 auto
+
+.footer 
+	flex: 0 0 auto
+
+.container
+	width: 1140px
+	margin: 0 auto
+
+.title
+	word-wrap: break-word
+	font-size: 45px
+	color: #000
+	font-family: "Har-Light"
+	display: flex
+	&::before
+		content: ''
+		display: block
+		height: auto
+		width: 4px
+		background: #7ab36c
+		margin-right: 27px
+
+.subtitle
+	word-wrap: break-word
+
+.btn
+	padding: 15px 24px
+	font-size: 17px
+	color: #fff
+	background: #7ab36c
+	width: max-content
+
+.bigText
+	font-size: 143px
+	font-family: "Har-Bold"
+	color: transparent
+	text-transform: uppercase
+	-webkit-text-stroke: 1px #fff
+
+input
+	cursor: pointer
+	&::placeholder,
+	&::-webkit-input-placeholder,
+	&::-moz-placeholder,
+	&::-ms-input-placeholder,
+		color: #fff
+	
+a
+	color: #000
+	&:hover
+		text-decoration: none
+
+.breadCrumbs
+	margin-top: 63px
+	margin-bottom: 50px
+	&__link
+		display: flex
+		align-items: center
+		a,span
+			color: #878787
+			font-size: 17px
+		span
+			margin: 0 4px
+	&__current
+		color: #000 !important
+	&__title
+		margin-top: 22px
+		color: #4c4c4c
+		font-size: 63px
+		font-family: "Har-Bold"
+		text-transform: uppercase
+		line-height: 100%
+
+.preview
+	display: flex
+	&__num
+		color: #4b8a3b
+		font-size: 130px
+		line-height: 95px
+		margin-right: 22px
+		display: flex
+		font-family: "Har-Bold"
+		&::before
+            content: ''
+            display: block
+            height: 100%
+            width: 4px
+            background: #7ab36c
+            margin-right: 27px
+	&__text
+		font-size: 20px
+		color: #000
+		max-width: 180px
+
+.header
+	&--first
+		position: absolute
+		width: 1140px
+		left: 50%
+		transform: translateX(-50%)
+	&__nav
+		display: flex
+		padding-top: 27px
+	&__logo
+		margin-right: 145px
+	&__address
+		margin-right: 138px
+		font-size: 15px
+	&__link
+		display: flex
+		flex-direction: column
+	&__phone
+		font-size: 20px
+		text-align: left
+	&__mail
+		font-size: 15px
+		text-align: left
+	&__menu
+		margin-left: auto
+		display: flex
+		flex-direction: column
+		align-items: center
+		padding: 11px
+		svg
+			margin-bottom: 10px
+
+.footer
+	display: flex
+	height: 286px
+	&__left
+		background: #409458
+		width: 60%
+		padding: 30px 60px 0 390px
+		display: flex
+		justify-content: space-between
+	&__menu
+		display: flex
+		flex-direction: column
+	&__list
+		display: flex
+		flex-direction: column
+		margin-bottom: 26px
+		li
+			margin-bottom: 6px
+			a
+				font-size: 15px
+				color: #fff
+	&__reserve
+		color: rgba(255, 255, 255, 0.5)
+		font-size: 15px
+		display: flex
+		flex-direction: column
+		span
+			opacity: .5
+			&:not(:last-child)
+				margin-bottom: 12px
+		a
+			color: rgba(255, 255, 255, 0.5)
+			text-decoration: underline
+		&::before
+			content: ''
+			display: block
+			width: 250px
+			height: 1px
+			background: #fff
+			margin-bottom: 20px
+	&__equipment
+		display: flex
+		flex-direction: column
+	&__equipmentTitle
+		color: #fff
+		font-size: 17px
+		margin-bottom: 12px
+		text-transform: uppercase
+	&__equipmentText
+		display: flex
+		flex-direction: column
+		p
+			font-size: 15px
+			color: rgba(255, 255, 255, 0.5)
+			opacity: .5
+			margin-bottom: 6px
+	&__right
+		width: 40%
+		background: #266738
+		padding: 30px 390px 0 30px
+		display: flex
+		flex-direction: column
+	&__contact
+		display: flex
+		align-items: center
+		&:not(:last-child)
+			margin-bottom: 30px
+		svg
+			margin-right: 15px
+		a
+			font-size: 15px
+			color: #fff
