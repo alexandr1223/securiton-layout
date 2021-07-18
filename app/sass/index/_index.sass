@@ -1,7 +1,7 @@
 .first
     background: url('../img/first-bg.png') center center/cover no-repeat
     padding-top: 167px
-    height: 1200px
+    height: 1923px
     .container
         z-index: 10
         position: relative
@@ -71,7 +71,7 @@
         left: -460px
     &__catalog
         position: absolute
-        top: 648px
+        top: 480px
         right: 0
         display: flex
     &__catalogItem
@@ -105,6 +105,231 @@
     &__catalogText
         font-size: 17px
         margin-bottom: 8px
+
+.first-content
+    margin-top: -760px
+    margin-bottom: 66px
+    overflow-x: hidden
+    &__text
+        margin-left: 24px
+        p
+            font-size: 16px
+            line-height: 25px
+            &:not(:last-child)
+                margin-bottom: 20px
+    &__top
+        margin-top: 56px
+    &__block
+        display: grid
+        grid-template-columns: 1fr 572px
+        grid-gap: 20px
+    &__item
+        display: flex
+        flex-direction: column
+        position: relative
+        &--ladder
+            padding-top: 23px
+    &__list
+        display: flex
+        flex-direction: column
+        margin-bottom: 27px
+        li
+            font-size: 17px
+            color: #fff
+            margin-bottom: 8px
+            display: flex
+            &::before
+                content: ''
+                margin-top: 6px
+                margin-right: 16px
+                background: #fff
+                display: block
+                min-width: 6px
+                max-height: 6px
+                border-radius: 50%
+    &__btn
+        display: block
+        margin-bottom: 40px
+    &__whitebtn
+        display: block
+        background: #fff
+        color: #7ab36c
+    &__light
+        content: ''
+        width: 100%
+        position: absolute
+        right: -100%
+        height: calc( 100% - 23px )
+        display: block
+        opacity: .2
+        background: #7ab36c
+        &::before
+            content: ''
+            position: absolute
+            display: block
+            top: -20px
+            height: 23px
+            width: 80%
+            background: url('../img/ladder.png') center center/cover no-repeat
+    &__green
+        background: #7ab36c
+        padding: 22px 84px 30px 51px
+    &__greenTitle
+        font-size: 35px
+        line-height: 120%
+        margin-bottom: 20px
+        color: #fff 
+        font-family: "Har-Light"
+        font-weight: 300
+    &__greenText
+        font-size: 17px
+        line-height: 25px
+        color: #fff 
+        font-weight: 400
+        &:not(:last-child)
+            margin-bottom: 20px
+    &__ladder
+        position: absolute
+        top: 0
+        height: 23px
+        width: 100%
+        img
+            height: 100%
+            object-fit: cover
+
+.partner
+    margin-bottom: 200px
+    padding-top: 300px
+    .preview__text
+        max-width: 250px
+    &__block
+        position: relative
+    &__image
+        position: absolute
+        top: -470px
+        right: -200px
+    &__details
+        position: absolute
+        right: 230px
+        top: 310px
+        display: flex
+        flex-direction: column
+        width: 160px
+        span
+            font-size: 15px
+            line-height: 20px
+            margin-bottom: 12px
+        &::before
+            content: ''
+            position: absolute
+            left: -17px
+            display: block
+            height: 100%
+            width: 4px
+            background: #7ab36c
+    &__detailsLink
+        display: flex
+        font-size: 17px
+        color: #4b8a3b
+        align-items: center
+        span
+            margin-bottom: 0
+        svg
+            margin-left: 12px
+            display: block
+            fill: #4b8a3b
+            height: auto
+            width: 10px
+    &__preview
+        margin-bottom: 44px
+    &__text
+        margin-left: 24px
+        p
+            font-size: 15px
+            max-width: 475px
+    &__bigText
+        -webkit-text-stroke: 1px #7ab36c
+        font-size: 98px
+        margin-top: 60px
+        margin-bottom: 43px
+    &__slider
+        margin-bottom: 45px
+        position: relative
+        &::after
+            content: ''
+            display: block
+            width: 200px
+            height: 5px
+            position: absolute
+            bottom: -50px
+            background-color: #4b8a3b
+
+    &__item
+        position: relative
+        img
+            margin: 0 auto
+            height: 190px
+            object-fit: cover
+            &:hover + .product-slider__zoom
+                opacity: 1
+    &__zoom
+        width: 95px
+        height: 95px
+        background: rgba(122, 179, 108, .3)
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        opacity: 0
+        transition: .4s
+        cursor: pointer
+        img,svg
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 47px
+            height: 47px
+            transform: translate(-50%, -50%)
+        &:hover
+            opacity: 1
+    .prev
+        position: absolute
+        left: 0
+        top: 50%
+        background: rgba(122, 179, 108, .3)
+        width: 54px
+        height: 54px
+        transform: translateY(-50%)
+        cursor: pointer
+        z-index: 2
+        img
+            width: 14px
+            height: auto
+            position: absolute
+            top: 50%
+            left: 55%
+            transform: translate(-50%, -50%) rotate(180deg)
+            margin: 0
+    .next
+        position: absolute
+        right: 0
+        top: 50%
+        background: rgba(122, 179, 108, .3)
+        width: 54px
+        height: 54px
+        transform: translateY(-50%)
+        cursor: pointer
+        z-index: 2
+        img
+            width: 16px
+            height: auto
+            position: absolute
+            top: 50%
+            left: 55%
+            margin: 0
+            transform: translate(-50%, -50%)
+
+
 
 .product-list
     &__title

@@ -89,4 +89,47 @@ document.addEventListener("DOMContentLoaded", function(event) {
         prevArrow: "<div class='prev'><img src='../img/svg/right-arrow.svg' alt='1'></div>",
         nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' alt='2'></div>",
     });
+
+
+    function openDocument() {
+        $(document).ready(function() {
+            document.querySelectorAll('.product-slider__zoom').forEach(item => {
+                item.addEventListener('click', function() {
+                    console.log('1')
+                    document.querySelector('.modal__block img').src = this.parentElement.parentElement.querySelector('img').src
+                    document.querySelector('.modal').classList.add('modal__show')
+                })
+                document.querySelector('.modal').addEventListener('click', (item) => {
+                    if (item.target.classList.contains('modal__block')) {
+                        document.querySelector('.modal').classList.remove('modal__show')
+                    }
+                })
+                document.querySelector('.modal__close').addEventListener('click', (item) => {
+                    document.querySelector('.modal').classList.remove('modal__show')
+                })
+            })
+        });
+        
+    }
+    openDocument();
+
+    $('.product-slider__block').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        arrows: true,
+        prevArrow: "<div class='prev'><img src='../img/svg/right-arrow.svg' alt='1'></div>",
+        nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' alt='2'></div>",
+    });
+
+    $('.partner__slider').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        arrows: true,
+        prevArrow: "<div class='prev'><img src='../img/svg/right-arrow.svg' alt='1'></div>",
+        nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' alt='2'></div>",
+    });
 });

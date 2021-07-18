@@ -20,12 +20,14 @@ body
 	width: 1140px
 	margin: 0 auto
 
-.title
+.title,
+.smalltitle
 	word-wrap: break-word
 	font-size: 45px
 	color: #000
 	font-family: "Har-Light"
 	display: flex
+	font-weight: 300
 	&::before
 		content: ''
 		display: block
@@ -33,6 +35,14 @@ body
 		width: 4px
 		background: #7ab36c
 		margin-right: 27px
+
+.smalltitle
+	font-size: 35px
+	line-height: 130%
+	&::before
+		height: 25px
+		margin-top: 8px
+		min-width: 4px
 
 .subtitle
 	word-wrap: break-word
@@ -84,6 +94,11 @@ a
 		font-family: "Har-Bold"
 		text-transform: uppercase
 		line-height: 100%
+	&__subtitle
+		margin-top: 16px
+		font-size: 25px
+		color: #4c4c4c
+
 
 .preview
 	display: flex
