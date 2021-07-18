@@ -122,6 +122,8 @@ a
 		max-width: 180px
 
 .header
+	z-index: 10
+	position: relative
 	&--first
 		position: absolute
 		width: 1140px
@@ -141,6 +143,7 @@ a
 	&__phone
 		font-size: 20px
 		text-align: left
+		font-family: 'Har-SemiBold'
 	&__mail
 		font-size: 15px
 		text-align: left
@@ -150,8 +153,93 @@ a
 		flex-direction: column
 		align-items: center
 		padding: 11px
+		width: 65px
+		height: 61px
+		background: url('../img/svg/menu.png') center center/cover no-repeat
+		position: relative
+		cursor: pointer
 		svg
 			margin-bottom: 10px
+		span
+			font-size: 15px
+			line-height: 100%
+		&:hover > .menu
+			opacity: 1
+			z-index: 10
+		
+
+.menu
+	position: absolute
+	top: 65px
+	background: #fff
+	right: 0
+	width: 427px
+	padding: 33px 40px 43px 25px
+	z-index: 100
+	opacity: 0
+	z-index: -1
+	transition: .4s
+	&__title
+		font-size: 25px
+		padding-bottom: 20px
+		border-bottom: 1px solid #d6d6d6
+		line-height: 100%
+	&__list
+		margin-top: 20px
+		li
+			display: flex
+			a
+				font-size: 20px
+				line-height: 100%
+				display: flex
+				flex-direction: column
+			&::before
+                content: ''
+                margin-top: 7px
+                margin-right: 14px
+                background: #7ab36c
+                display: block
+                min-width: 7px
+                max-height: 7px
+                border-radius: 50%
+			&:not(:last-child)
+				a
+					margin-bottom: 20px
+	&__open
+		&:hover + .sub-menu
+			opacity: 1
+			height: 182px
+			margin-bottom: 20px
+	&__ladder
+		position: absolute
+		bottom: 0
+		width: 100%
+		height: 23px
+		left: 0
+	.sub-menu
+		opacity: 0
+		height: 0
+		transition: .5s
+		margin-left: 20px
+		&:hover
+			opacity: 1
+			height: 182px
+			margin-bottom: 20px
+		li
+			&::before
+				content: ''
+				margin-top: 7px
+				margin-right: 14px
+				border: 1px solid #7ab36c
+				background: #fff
+				display: block
+				min-width: 7px
+				max-height: 7px
+				border-radius: 50%
+			a
+				font-size: 17px
+
+			
 
 .footer
 	display: flex
