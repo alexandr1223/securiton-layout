@@ -7,7 +7,7 @@
         max-width: 540px
         margin-right: 120px
         margin-top: 30px
-        margin-left: 24px
+        margin-left: 27px
         p
             font-size: 15px
             line-height: 22px
@@ -31,7 +31,7 @@
         &::before
             content: ''
             position: absolute
-            right: 13px
+            right: 0
             top: 50%
             transform: translateY(-50%)
             height: 174px
@@ -41,7 +41,7 @@
         &::after
             content: ''
             position: absolute
-            right: 13px
+            right: 0
             top: 50%
             transform: translateY(-50%)
             height: 217px
@@ -82,7 +82,6 @@
         margin-bottom: 70px
     &__block
         display: flex
-        overflow-x: scroll
         padding-bottom: 72px
         padding-top: 63px
         padding-left: 25px
@@ -95,6 +94,7 @@
     &__item
         display: flex
         flex-direction: column
+        margin: 0 auto
         &:not(:last-child)
             margin-right: 54px
     &__box
@@ -103,17 +103,23 @@
         border: 3px solid rgba(122, 179, 108, .3)
         padding: 57px 20px 25px 24px
         position: relative
-        height: 510px
+        height: 100%
+        min-height: 509px
         width: 330px
     &__itemTitle
         margin-bottom: 40px
         font-size: 25px
-        margin-left: 165px
+        margin-left: 30px
         position: relative
+    &__top
+        display: flex
     &__image
-        position: absolute
-        left: -25px
-        bottom: calc( 100% - 140px )
+        position: relative
+        min-width: 150px
+        margin-left: -103px
+        margin-top: -100px
+        img
+            display: block
     &__video
         position: absolute
         right: -3px
@@ -149,6 +155,7 @@
     &__text
         p
             font-size: 15px
+            line-height: 25px
             &:not(:last-child)
                 margin-bottom: 20px
 
@@ -158,7 +165,7 @@
     &__title
         margin-bottom: 30px
     &__text
-        margin-left: 24px
+        margin-left: 27px
         p
             font-size: 17px
             line-height: 25px
@@ -383,6 +390,9 @@
             display: block
             margin: 0 auto
             width: auto
+        iframe
+            display: block
+            margin: 0 auto
     &__show
         opacity: 1
         z-index: 10

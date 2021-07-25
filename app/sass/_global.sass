@@ -75,7 +75,7 @@ a
 		text-decoration: none
 
 .breadCrumbs
-	margin-top: 63px
+	margin-top: 50px
 	margin-bottom: 50px
 	&__link
 		display: flex
@@ -83,6 +83,7 @@ a
 		a,span
 			color: #878787
 			font-size: 17px
+			line-height: 90%
 		span
 			margin: 0 4px
 	&__current
@@ -134,6 +135,7 @@ a
 		padding-top: 27px
 	&__logo
 		margin-right: 145px
+		margin-top: 16px
 	&__address
 		margin-right: 138px
 		font-size: 15px
@@ -166,11 +168,13 @@ a
 		&:hover > .menu
 			opacity: 1
 			z-index: 10
+			visibility: visible
 		
 
 .menu
 	position: absolute
-	top: 65px
+	top: 62px
+	border-top: 5px solid rgba(0, 0, 0, .0)
 	background: #fff
 	right: 0
 	width: 427px
@@ -178,6 +182,7 @@ a
 	z-index: 100
 	opacity: 0
 	z-index: -1
+	visibility: hidden
 	transition: .4s
 	&__title
 		font-size: 25px

@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         $(document).ready(function() {
             document.querySelectorAll('.product-slider__zoom').forEach(item => {
                 item.addEventListener('click', function() {
-                    console.log('1')
                     document.querySelector('.modal__block img').src = this.parentElement.parentElement.querySelector('img').src
                     document.querySelector('.modal').classList.add('modal__show')
                 })
@@ -132,4 +131,85 @@ document.addEventListener("DOMContentLoaded", function(event) {
         prevArrow: "<div class='prev'><img src='../img/svg/right-arrow.svg' alt='1'></div>",
         nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' alt='2'></div>",
     });
+
+
+    // Увеличение картинки сертификата на главной странице
+    function openSertificate() {
+        $(document).ready(function() {
+            document.querySelectorAll('.sertificate__zoom').forEach(item => {
+                item.addEventListener('click', function() {
+                    document.querySelector('.modal__block img').src = this.parentElement.parentElement.querySelector('img').src
+                    document.querySelector('.modal').classList.add('modal__show')
+                })
+                document.querySelector('.modal').addEventListener('click', (item) => {
+                    if (item.target.classList.contains('modal__block')) {
+                        document.querySelector('.modal').classList.remove('modal__show')
+                    }
+                })
+                document.querySelector('.modal__close').addEventListener('click', (item) => {
+                    document.querySelector('.modal').classList.remove('modal__show')
+                })
+            })
+        });
+    }
+    openSertificate();
+
+    // Открытие второго и третьего уровня меню на странице "Документация"
+    function openDocumentation() {
+        document.querySelectorAll('.open-second-level').forEach(item => {
+            item.addEventListener('click', function () {
+                $(this).siblings('ul').slideToggle();
+            })
+        })
+        document.querySelectorAll('.open-third-level').forEach(item => {
+            item.addEventListener('click', function () {
+                $(this.parentElement).siblings('ul').slideToggle();
+            })
+        })
+    }
+    openDocumentation();
+
+    // Открытие видео на странице "СПИСОК ПОСТАВЛЯЕМОГО ОБОРУДОВАНИЯ"
+    function openVideoOnProductList() {
+        $(document).ready(function() {
+            document.querySelectorAll('.equipment__video').forEach(item => {
+                item.addEventListener('click', function() {
+                    
+                    document.querySelector('.modal__block iframe').src = this.dataset.link
+                    document.querySelector('.modal').classList.add('modal__show')
+                })
+                document.querySelector('.modal').addEventListener('click', (item) => {
+                    if (item.target.classList.contains('modal__block')) {
+                        document.querySelector('.modal').classList.remove('modal__show')
+                    }
+                })
+                document.querySelector('.modal__close').addEventListener('click', (item) => {
+                    document.querySelector('.modal').classList.remove('modal__show')
+                })
+            })
+        });
+    }
+    openVideoOnProductList();
+
+    // Открытие видео на странице "О нас"
+    function openVideoOnProductList() {
+        $(document).ready(function() {
+            document.querySelectorAll('.equipment__video').forEach(item => {
+                item.addEventListener('click', function() {
+                    
+                    document.querySelector('.modal__block iframe').src = this.dataset.link
+                    document.querySelector('.modal').classList.add('modal__show')
+                })
+                document.querySelector('.modal').addEventListener('click', (item) => {
+                    if (item.target.classList.contains('modal__block')) {
+                        document.querySelector('.modal').classList.remove('modal__show')
+                    }
+                })
+                document.querySelector('.modal__close').addEventListener('click', (item) => {
+                    document.querySelector('.modal').classList.remove('modal__show')
+                })
+            })
+        });
+    }
+    openVideoOnProductList();
 });

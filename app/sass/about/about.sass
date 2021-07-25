@@ -183,6 +183,8 @@
 
 .equipment
     margin-bottom: 110px
+    &--page
+        margin-top: 154px
     &__block
         display: grid
         grid-template-columns: 1fr 1fr
@@ -273,6 +275,7 @@
         width: 54px
         height: 54px
         transform: translateY(-50%)
+        cursor: pointer
         img
             width: 14px
             height: auto
@@ -289,6 +292,7 @@
         width: 54px
         height: 54px
         transform: translateY(-50%)
+        cursor: pointer
         img
             width: 16px
             height: auto
@@ -326,3 +330,167 @@
         top: 120px
         -webkit-text-stroke: 1px #7ab36c
         opacity: .5
+    &__item
+        position: relative
+    &__zoom
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background: rgba(122, 179, 108, .3)
+        padding: 17px
+        border-radius: 50%
+        width: 76px
+        height: 76px
+        cursor: pointer
+        svg
+            width: 40px
+
+.international
+    margin-top: 21px
+    height: 504px
+    background: url('../img/international-bg.jpeg') center center/cover no-repeat
+    padding-top: 28px
+    &__breadcrubms
+        display: flex
+        align-items: center
+        margin-bottom: 107px
+        a,span
+            color: #878787
+            font-size: 17px
+            line-height: 90%
+        span
+            margin: 0 4px
+    &__breadcrubmsCurrent
+        color: #000 !important
+    &__title
+        font-size: 63px
+        line-height: 100%
+        margin-bottom: 30px
+        font-family: "Har-Bold"
+        text-transform: uppercase
+        color: #4c4c4c
+    &__subtitle
+        font-size: 20px
+        color: #000
+        display: flex
+        font-weight: 300
+        max-width: 400px
+        margin-bottom: 30px
+        &::before
+            content: ''
+            display: block
+            height: auto
+            min-width: 5px
+            width: 5px
+            background: #4b8a3b
+            margin-right: 14px
+    &__text
+        font-size: 15px
+
+.international-about
+    margin-top: 45px
+    margin-bottom: 90px
+    &__block
+        display: flex
+    &__left
+        max-width: 523px
+        p
+            font-size: 15px
+            line-height: 25px
+            &:not(:last-child)
+                margin-bottom: 15px
+    &__green
+        margin-left: 47px
+        background: #7ab36c
+        padding: 24px
+        p
+            font-size: 15px
+            color: #fff
+            line-height: 25px
+    &__stat
+        display: flex
+        margin-top: 50px
+    &__item
+        &:not(:last-child)
+            margin-right: 35px
+        span
+            font-size: 54px
+            color: #fff
+            margin-bottom: 16px
+            font-family: "Har-Bold"
+            display: flex
+            align-items: flex-end
+            line-height: 100%
+        p
+            font-size: 17px
+            color: #fff
+            line-height: 19px 
+            &:before
+                content: ''
+                width: 100%
+                height: 2px
+                background: #fff
+                margin-bottom: 18px
+                display: block
+    &__small
+        font-size: 30px
+        line-height: 100%
+    &__verysmall
+        font-size: 17px
+        line-height: 100%
+        margin-bottom: 10px
+
+.base
+    padding-top: 53px
+    background: #f9f9f9
+    padding-bottom: 51px
+    &__title
+        margin-bottom: 36px
+        line-height: 90%
+    &__subtitle
+        line-height: 25px
+        font-size: 15px
+        margin-bottom: 50px
+        font-weight: 400
+    &__image
+        margin: 0 auto
+        img
+            margin: 0 auto
+
+.reach
+    margin-top: 71px
+    margin-bottom: 68px
+    &__title
+        margin-bottom: 36px
+        line-height: 90%
+    &__subtitle
+        line-height: 25px
+        font-size: 15px
+        font-weight: 400
+    &__image
+        margin: 0 auto
+        img
+            margin: 0 auto
+
+.quality
+    position: relative
+    height: 690px
+    &__image
+        position: absolute
+        left: 0
+        top: 0
+    &__title
+        margin-bottom: 44px
+    &__info   
+        position: absolute
+        top: 125px
+        left: 51%
+        max-width: 553px
+    &__text
+        p
+            font-size: 15px
+            line-height: 25px
+            &:not(:last-child)
+                margin-bottom: 20px
+                
