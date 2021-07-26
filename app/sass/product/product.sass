@@ -3,6 +3,7 @@
     margin-top: 100px
     &__block
         display: flex
+        justify-content: space-between
     &__text
         max-width: 540px
         margin-right: 120px
@@ -26,7 +27,7 @@
         align-items: center
     &__mediaImage
         margin-right: -60px
-        z-index: 20
+        z-index: 9
         position: relative
         &::before
             content: ''
@@ -96,7 +97,7 @@
         flex-direction: column
         margin: 0 auto
         &:not(:last-child)
-            margin-right: 54px
+            margin-right: 48px
     &__box
         display: flex
         flex-direction: column
@@ -109,14 +110,14 @@
     &__itemTitle
         margin-bottom: 40px
         font-size: 25px
-        margin-left: 30px
+        margin-left: 24px
         position: relative
     &__top
         display: flex
     &__image
         position: relative
         min-width: 150px
-        margin-left: -103px
+        margin-left: -50px
         margin-top: -100px
         img
             display: block
@@ -155,15 +156,42 @@
     &__text
         p
             font-size: 15px
-            line-height: 25px
+            line-height: 22px
             &:not(:last-child)
                 margin-bottom: 20px
 
 .product-content
     margin-bottom: 70px
     overflow-x: hidden
+    &__list
+        margin-bottom: 30px
     &__title
         margin-bottom: 30px
+    &__listBlock
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 110px
+    &__listItem
+        display: flex
+        flex-direction: column
+        margin-left: 42px
+        li
+            font-size: 17px
+            font-weight: 400
+            line-height: 20px
+            position: relative
+            &:not(:last-child)
+                margin-bottom: 15px
+            &::before
+                content: ''
+                background: #7ab36c
+                display: block
+                width: 6px
+                height: 6px
+                border-radius: 50%
+                position: absolute
+                left: -12px
+                margin-top: 7px
     &__text
         margin-left: 27px
         p
@@ -236,7 +264,7 @@
         grid-gap: 25px 85px
     &__item
         display: flex
-        align-items: center
+        align-items: end
     &__img
         margin-right: 10px
         min-width: 75px

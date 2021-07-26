@@ -1,0 +1,366 @@
+@media (max-width: 1200px)
+    .first
+        padding-top: 160px
+        &__title
+            font-size: 50px
+        &__subtitle
+            font-size: 17px
+    .first-content
+        margin-top: -900px
+        &__block
+            grid-template-columns: 1fr 500px
+    .product-list
+        &__item
+            margin: 0 80px
+        .next
+            right: 0
+        .prev
+            left: 0
+    .partner
+        padding-top: 170px
+        margin-bottom: 107px
+        &__image
+            top: -370px
+            right: -170px
+        &__details
+            right: 160px
+            top: 260px
+    .documentation
+        margin-bottom: 70px
+        &__block
+            width: 800px
+            margin-left: 140px
+            padding-left: 290px
+            padding-right: 40px
+        &__image
+            img
+                width: 407px
+                left: -150px
+                top: -140px
+        &__all
+            span
+                font-size: 20px
+    
+    
+    
+    .documentation-page
+        margin-top: 134px
+        &__block
+            width: 800px
+            margin-left:  140px
+        &__image
+            width: 507px
+            left: -204px
+            top: -120px
+        .first-level
+            margin-left: 320px
+    .contact
+        margin-bottom: 109px
+        &--main
+            margin-bottom: 60px
+        &__title
+            margin-top: 30px
+            margin-bottom: 45px
+        &__img
+            img
+                object-fit: cover
+                height: 453px
+        &__rect
+            padding-top: 84px
+            padding-bottom: 75px
+            margin-top: 30px
+            padding-left: 30px
+            ul
+                li
+                    &:not(:last-child)
+                        margin-bottom: 20px
+            &--main
+                padding-top: 45px
+                padding-bottom: 42px
+                padding-right: 68px
+                margin-top: 0
+                padding-left: 0
+    .news
+        &__item
+            margin-left: 18px
+        &__info
+            align-items: end
+            span
+                margin-right: 73px
+                text-align: right
+            a
+                white-space: nowrap
+
+@media (max-width: 767px)
+    .container
+        width: 100%
+        padding: 0 20px
+    .title
+        font-size: 20px
+        margin: 0 auto
+        line-height: 20px
+        width: max-content
+        max-width: 260px
+        &::before
+            min-width: 4px
+            margin-right: 14px
+    .header
+        &__nav
+            padding-top: 23px
+        &--first
+            width: 100%
+        &__logo
+            margin-top: 0
+        &__address
+            display: none
+        &__link
+            display: none
+        &__menu
+            background: unset
+            height: 16px
+            width: 24px
+            padding: 0
+        &__open
+            margin-top: 0
+    .first
+        padding-top: 88px
+        &__title
+            text-align: center
+            font-size: 24px
+            line-height: 30px
+            font-family: "Har-SemiBold"
+            span
+                display: block
+                font-family: "Har-Bold"
+        &__subtitle
+            width: 100%
+            font-size: 15px
+            line-height: 20px
+            text-align: center
+            padding: 10px 12px
+            margin-bottom: 20px
+        &__item
+            position: static
+            &::before
+                height: 0
+            &:not(:last-child)
+                margin-bottom: 13px
+        &__itemText
+            font-size: 15px
+            &::before
+                height: 32px
+                margin-right: 34px
+        &__itemNum
+            left: 12px
+        &__catalog
+            width: 100%
+            position: relative
+            top: unset
+            margin-top: 40px
+            display: flex
+            align-items: flex-end
+        &__catalogItem
+            margin-top: 190px
+            &--small
+                margin-right: 0
+                img
+                    display: none
+            &--second
+                img
+                    position: absolute
+                    left: 50%
+                    transform: translateX(-50%)
+                    top: 0
+        &__catalogBlock
+            margin-left: 0
+            padding: 0 10px
+            &--small                
+                padding-left: 0
+            &::before
+                display: none
+        &__catalogBtn
+            font-size: 15px
+    .first-content
+        margin-bottom: 30px
+        &__preview
+            flex-direction: column
+        .preview
+            &__num
+                margin: 0 auto
+                font-size: 78px
+                margin-bottom: 10px
+                &::before
+                    display: none
+            &__text
+                text-align: center
+                font-size: 15px
+                margin: 0 auto
+        &__block
+            display: flex
+            grid-gap: unset
+            flex-direction: column
+        &__text
+            margin-left: 0
+            p
+                display: block
+                text-align: center
+                font-size: 15px
+                margin: 0 auto
+        &__item
+            margin-top: 22px
+        &__btn
+            margin: 0 auto
+            margin-bottom: 20px
+        &__green
+            margin-left: -20px
+            width: calc(100% + 40px)
+            padding: 15px 50px 15px 50px
+        &__ladder
+            width: calc( 100% + 40px )
+            img 
+                margin-left: -20px
+        &__light
+            display: none
+        &__greenText
+            text-align: center
+            font-size: 15px
+            line-height: 120%
+        &__list
+            margin-bottom: 30px
+            li
+                font-size: 15px
+        &__whitebtn
+            margin: 0 auto
+    .product-list
+        display: none
+        .slick-track
+            padding-top: 50px
+        &__item
+            margin: 0 30px
+            width: 100%
+    .partner
+        &__image
+            position: static
+            display: flex
+            flex-direction: column-reverse
+        &__details
+            position: static
+            &::before
+                height: 60px
+        &__preview
+            width: 80%
+            margin: 0 auto
+            margin-bottom: 36px
+        .preview
+            &__num
+                font-size: 62px
+                line-height: 40px
+                margin-right: 12px
+                &::before
+                    height: 44px
+                    margin-right: 10px
+            &__text
+                font-size: 15px
+        &__text
+            text-align: center
+            font-size: 15px
+            margin-bottom: 60px
+        &__bigText
+            font-size: 56px
+            text-align: center
+        &__item
+            margin: 0 20px
+    .documentation
+        margin-bottom: 60px
+        &__title
+            margin-bottom: 187px
+        &__block
+            width: 80%
+            max-width: 400px
+            padding: 90px 30px 35px 30px
+            display: flex
+            flex-direction: column
+            margin: 0 auto
+        &__image
+            img
+                width: 100%
+                left: 50%
+                top: -150px
+                transform: translateX(-50%) 
+        &__list
+            margin-bottom: 50px
+            li
+                text-align: center
+                margin: 0 auto
+                &:not(:last-child)
+                    margin-bottom: 30px
+                &::before
+                    display: none
+        &__btn
+            margin: 0 auto
+    .news
+        margin-bottom: 40px
+        &__nav
+            display: flex
+            flex-direction: column
+            margin-bottom: 80px
+        &__all
+            margin: 0 auto
+            margin-top: 26px
+        &__item
+            padding: 130px 24px 36px 24px
+            margin: 0 auto
+            &:not(:last-child)
+                margin-bottom: 0
+        &__itemTitle
+            text-align: center
+            margin: 0 auto
+            font-size: 17px
+        &__itemText
+            font-size: 15px
+            text-align: center
+            margin: 0 auto
+            margin-top: 35px
+        &__image
+            top: -60px
+            left: -10px
+            transform: translateY(0)
+    .contact
+        .container
+            display: flex
+            flex-direction: column
+        &__title
+            margin-bottom: 120px
+        &__img
+            display: none
+            &--mobile
+                display: block
+                width: 98%
+                margin: 0 auto
+                position: static
+                margin-top: -250px
+                margin-bottom: 30px
+                img
+                    margin: 0 auto
+                    width: 300px
+                    height: 210px
+                
+        &__block
+            width: 100%
+            margin-left: 0
+        &__rect
+            width: 100%
+            margin: 0 auto
+            padding: 155px 0px 40px 0px
+            ul
+                padding-left:  0
+                margin: 0 auto
+                padding: 0 40px
+                li
+                    display: block
+                    text-align: center
+                    span
+                        text-align: center
+                        display: block
+                        &::before
+                            display: none

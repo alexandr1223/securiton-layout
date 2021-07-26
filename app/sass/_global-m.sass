@@ -1,0 +1,119 @@
+@media (max-width: 1200px)
+    body
+        overflow-x: hidden
+    .title
+        font-size: 35px
+        line-height: 41px
+    .container
+        width: 950px
+    .header
+        &__logo
+            width: 156px
+            margin-right: 113px
+        &__menu
+            width: 56px
+            height: 53px
+            svg
+                margin-bottom: 0
+        &__address
+            margin-right: 100px
+        &__open
+            align-items: center
+            margin-top: 10px
+            span
+                display: none
+        &__close
+            width: 46px
+            height: 44px
+
+    .breadCrumbs
+        margin-top: 37px
+        &__link
+            a
+                font-size: 15px
+        &__title
+            font-size: 50px
+            margin-top: 16px
+        &__subtitle
+            margin-top: 10px
+            font-size: 20px
+
+    .footer
+        width: 950px
+        margin: 0 auto
+        &__left
+            width: auto
+            padding-left: 0
+            position: relative
+            padding-right: 25px
+            width: 690px
+            &::before
+                content: ''
+                height: 100%
+                width: 100%
+                background: #409458
+                position: absolute
+                left: -99%
+                top: 0
+        &__menu
+            width: 340px
+            margin-left: 6px
+        &__right
+            width: 260px
+            padding-right: 0
+            position: relative
+            &::after
+                content: ''
+                height: 100%
+                width: 100%
+                background: #266738
+                position: absolute
+                right: -99%
+                top: 0
+        &__contact
+            svg
+                min-width: 18px
+
+@media (max-width: 768px)
+    .footer
+        display: flex
+        flex-direction: column-reverse
+        width: 100%
+        height: auto
+        &__right
+            width: 100%
+            padding: 22px
+            margin: 0 auto
+            align-items: start
+            &::after
+                display: none
+        &__link
+            max-width: 191px
+        &__left
+            flex-direction: column
+            width: 100%
+            padding: 30px
+        &__menu
+            width: 100%
+            flex-direction: column
+        &__list
+            width: max-content
+            margin: 0 auto
+            li
+                margin: 0 auto
+                width: max-content
+                &:not(:last-child)
+                    margin-bottom: 10px
+        &__equipmentTitle
+            text-align: center
+        &__equipmentText
+            text-align: center
+
+    .breadCrumbs
+        margin-bottom: 30px
+        &__link
+            display: none
+        &__title
+            font-size: 25px
+            text-align: center
+            

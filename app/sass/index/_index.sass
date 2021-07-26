@@ -21,6 +21,7 @@
         padding: 6px 17px
         color: #fff
         width: max-content
+        font-weight: 400
     &__features
         position: relative
     &__item
@@ -69,7 +70,7 @@
     &__bigText
         position: absolute
         transform: rotate(-90deg)
-        top: 337px
+        top: 490px
         left: -460px
     &__catalog
         position: absolute
@@ -112,6 +113,8 @@
     margin-top: -760px
     margin-bottom: 66px
     overflow-x: hidden
+    position: relative
+    z-index: 2
     &__text
         margin-left: 24px
         p
@@ -334,18 +337,22 @@
 
 
 .product-list
+    position: relative
+    z-index: 10
     &__title
-        margin-bottom: 116px
+        margin-bottom: 16px
     &__item
         border: solid 3px rgba(122, 179, 108, .3)
-        padding: 152px 30px 55px 30px
+        padding: 0 30px 55px 30px
         position: relative
         margin: 0 40px
     &__image
         position: absolute
-        top: -50%
-        left: -50%
-        transform: translate(50%, 50%)
+        bottom: 15px
+        left: -70px
+    &__top
+        height: 152px
+        position: relative
     &__video
         position: absolute
         right: 0
@@ -353,19 +360,70 @@
         background-color: #d7e8d3
         width: 90px
         height: 90px
+        transition: .4s
+        z-index: 10
         svg
             display: block
             position: absolute
             top: 50%
             left: 50%
             transform: translate(-50%, -50%)
+            transition: .4s
+        &:hover
+            background: #7ab36c
+            svg
+                fill: #fff
+
 
     &__documentation
-        padding: 19px 98px
+        padding: 19px 40px
         border: solid 1px #000000
-        background-color: #4b8a3b
+        background-color: #fff
         font-size: 17px
+        border: 1px solid #4b8a3b
+        margin-top: 
         color: #4b8a3b
+        margin: 0 auto
+        display: block
+        margin-top: 40px
+        width: 300px
+        text-align: center
+    .slick-track
+        padding-top: 100px
+    .prev
+        position: absolute
+        left: -69px
+        top: 60%
+        width: 54px
+        height: 54px
+        transform: translateY(-50%)
+        cursor: pointer
+        z-index: 2
+        img
+            width: 28px
+            height: auto
+            position: absolute
+            top: 50%
+            left: 55%
+            transform: translate(-50%, -50%) rotate(180deg)
+            margin: 0
+    .next
+        position: absolute
+        right: -36px
+        top: 60%
+        width: 54px
+        height: 54px
+        transform: translateY(-50%)
+        cursor: pointer
+        z-index: 2
+        img
+            width: 28px
+            height: auto
+            position: absolute
+            top: 50%
+            left: 55%
+            margin: 0
+            transform: translate(-50%, -50%)
 
 .documentation
     margin-bottom: 230px
@@ -434,6 +492,8 @@
         margin-left: auto
         color: #4b8a3b
         font-size: 17px
+        display: flex
+        align-items: center
         svg
             width: 10px
             margin-left: 16px
@@ -606,6 +666,8 @@
         width: 50%
         img
             display: block
+        &--mobile
+            display: none
     &__block
         display: flex
         flex-direction: column

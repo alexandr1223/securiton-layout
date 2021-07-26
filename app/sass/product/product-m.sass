@@ -1,0 +1,110 @@
+@media (max-width: 1200px) 
+    .product
+        margin-top: 80px
+        &__text
+            max-width: 458px
+            margin-right: 50px
+        &__mediaRectangle
+            width: 200px
+        &__mediaText
+            font-size: 15px
+    .product-content
+        margin-bottom: 50px
+        &__block
+            grid-template-columns: 1fr 500px
+        &__top
+            margin-top: 40px
+    .product-slider
+        padding: 50px 0
+    .product-feature
+        &__block
+            grid-gap: 25px 35px
+    .product-available
+        margin-bottom: 75px
+    .product-download
+        margin-bottom: 40px
+
+@media (max-width: 768px)
+    .product
+        margin-bottom: 57px
+        &__block
+            display: flex
+            flex-direction: column-reverse
+        &__preview
+            margin-top: 36px
+            .preview
+                &__num
+                    font-size: 78px
+                    line-height: 56px
+                    margin-right: 20px
+                    &::before
+                        margin-right: 17px
+                        height: 56px
+                &__text
+                    font-size: 15px
+        &__text
+            max-width: 100%
+            margin: 0 auto
+            margin-top: 30px
+        &__media
+            margin: 0 auto
+            position: relative
+            padding-bottom: 40px
+        &__mediaRectangle
+            height: 200px
+            width: 125px
+            margin-right: 0
+        &__mediaImage
+            margin-right: -48px
+            &::before
+                height: 125px
+                width: 145px
+                margin-right: 30px
+            &::after
+                height: 150px
+                width: 160px
+                margin-right: 30px
+            img
+                margin-right: -70px
+                width: 90%
+        &__mediaText
+            position: absolute
+            bottom: 0px
+            display: block
+            transform: rotate(0)
+            left: 50%
+            transform: translateX(-50%)
+            top: unset
+
+    .product-available
+        &__title
+            text-align: left
+            margin-bottom: 0
+            margin-left: 0
+        &__block
+            padding-top: 53px
+            padding-left: 0
+            width: 100%
+        &__box
+            min-width: 100%
+            width: calc(100% + 10px)
+            margin-left: 10px
+        &__image
+            margin-left: -40px
+        &__top
+        &__itemTitle
+            text-align: center
+            margin: 0 auto
+        &__item
+            width: 100%
+            &:not(:last-child)
+                margin-right: 50px
+            margin-left: 0
+        &__link
+            margin: 0 auto
+            span
+                width: 45px
+                height: 45px
+        &__linkText
+            font-size: 15px
+            margin-left: 40px

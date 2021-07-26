@@ -53,6 +53,12 @@ body
 	color: #fff
 	background: #7ab36c
 	width: max-content
+	border: 1px solid transparent
+	transition: .4s
+	&:hover
+		background: #fff
+		border: 1px solid #7ab36c
+		color: #7ab36c
 
 .bigText
 	font-size: 143px
@@ -99,6 +105,9 @@ a
 		margin-top: 16px
 		font-size: 25px
 		color: #4c4c4c
+		span
+			display: block
+			color: #ff0000
 
 
 .preview
@@ -115,7 +124,7 @@ a
             display: block
             height: 100%
             width: 4px
-            background: #7ab36c
+            background: #4b8a3b
             margin-right: 27px
 	&__text
 		font-size: 20px
@@ -149,11 +158,12 @@ a
 	&__mail
 		font-size: 15px
 		text-align: left
-	&__menu
-		margin-left: auto
+	&__open
 		display: flex
 		flex-direction: column
 		align-items: center
+	&__menu
+		margin-left: auto
 		padding: 11px
 		width: 65px
 		height: 61px
@@ -165,16 +175,27 @@ a
 		span
 			font-size: 15px
 			line-height: 100%
-		&:hover > .menu
-			opacity: 1
-			z-index: 10
-			visibility: visible
+	&__close
+		position: absolute
+		background: #4b8a3b
+		height: 52px
+		width: 55px
+		top: 4px
+		display: none
+		z-index: 11
+		right: 5px
+		svg
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			fill: #fff
+			
 		
 
 .menu
 	position: absolute
-	top: 62px
-	border-top: 5px solid rgba(0, 0, 0, .0)
+	top: 65px
 	background: #fff
 	right: 0
 	width: 427px
@@ -184,6 +205,10 @@ a
 	z-index: -1
 	visibility: hidden
 	transition: .4s
+	&__open
+		opacity: 1
+		z-index: 120
+		visibility: visible
 	&__title
 		font-size: 25px
 		padding-bottom: 20px
@@ -193,7 +218,7 @@ a
 		margin-top: 20px
 		li
 			display: flex
-			a
+			a,span
 				font-size: 20px
 				line-height: 100%
 				display: flex
@@ -210,11 +235,14 @@ a
 			&:not(:last-child)
 				a
 					margin-bottom: 20px
-	&__open
-		&:hover + .sub-menu
-			opacity: 1
-			height: 182px
+	&__more
+		display: flex
+		svg
+			width: 16px
+			fill: #4b8a3b
+			margin-left: 10px
 			margin-bottom: 20px
+			transition: .4s
 	&__ladder
 		position: absolute
 		bottom: 0
@@ -226,7 +254,7 @@ a
 		height: 0
 		transition: .5s
 		margin-left: 20px
-		&:hover
+		&__open
 			opacity: 1
 			height: 182px
 			margin-bottom: 20px
