@@ -35,12 +35,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function desktopMenu() {
         
         document.querySelector('.header__close').addEventListener('click', (item) => {
-            console.log(item.target)
             document.querySelector('.menu').classList.remove('menu__open')
             document.querySelector('.header__close').style.cssText = 'display: none'
         })
         document.querySelector('.header__open').addEventListener('click', (item) => {
-            console.log(item.target)
             document.querySelector('.menu').classList.add('menu__open')
             document.querySelector('.header__close').style.cssText = 'display: block'
         })
@@ -90,37 +88,53 @@ document.addEventListener("DOMContentLoaded", function(event) {
           ]
     });
 
-    $('.completed__boxImage').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.completed__nav'
-    });
-    $('.completed__nav').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        asNavFor: '.completed__boxImage',
-        focusOnSelect: true,
-        prevArrow: "<img src='../img/svg/right-arrow.svg' class='prev' alt='1'>",
-        nextArrow: "<img src='../img/svg/right-arrow.svg' class='next' alt='2'>",
-    });
+    // $('.completed__boxImage').slick({
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     arrows: false,
+    //     fade: true,
+    //     asNavFor: '.completed__nav'
+    // });
+    // $('.completed__nav').slick({
+    //     slidesToShow: 4,
+    //     slidesToScroll: 1,
+    //     asNavFor: '.completed__boxImage',
+    //     focusOnSelect: true,
+    //     prevArrow: "<img src='../img/svg/right-arrow.svg' class='prev' alt='1'>",
+    //     nextArrow: "<img src='../img/svg/right-arrow.svg' class='next' alt='2'>",
+    // });
 
     function openProject() {
         document.querySelectorAll('.completed__open').forEach(openBtn => {
             openBtn.addEventListener('click', function() {
-                console.log(this.parentElement.querySelector('.completed__nav'))
                 if (this.classList.contains('active')) {
                     this.classList.remove('active')
                     this.parentElement.querySelector('.completed__nav').classList.remove('openCompletedProject')
-                    this.parentElement.querySelector('.completed__boxImage img').style.cssText = 'height: 250px'
+                    this.parentElement.querySelector('.completed__boxImage').style.cssText = 'height: 250px'
+                    this.parentElement.querySelector('.completed__boxImage').classList.remove('completed__boxImage--open')
+                    
                 } else {
                     this.classList.add('active')
+                    this.parentElement.querySelector('.completed__boxImage').classList.add('completed__boxImage--open')
                     this.parentElement.querySelector('.completed__nav').classList.add('openCompletedProject')
-                    this.parentElement.querySelector('.completed__boxImage img').style.cssText = 'height: 534px'
+                    this.parentElement.querySelector('.completed__boxImage').style.cssText = 'height: 100%'
                 }
                
             })
+        })
+        document.querySelector('.completed__next').addEventListener('click', function(item) {
+            let currentItem = this.parentElement.querySelector('.completed__boxImage');
+            currentItem.classList.remove('completed__boxImage', 'completed__boxImage--open')
+            $('.completed__nav img')[0].before(currentItem)
+            let last = $('.completed__nav img').last()[0]
+            $('.completed__nav img')[0].before(last)
+            last.classList.add('completed__boxImage', 'completed__boxImage--open')
+        })
+        document.querySelector('.completed__prev').addEventListener('click', function(item) {
+            this.parentElement.querySelector('.completed__boxImage').nextElementSibling.classList.add('completed__boxImage', 'completed__boxImage--open')
+            let currentItem = this.parentElement.querySelector('.completed__boxImage');
+            currentItem.classList.remove('completed__boxImage', 'completed__boxImage--open')
+            document.querySelector('.completed__nav').append(currentItem)
         })
     }
     openProject();
@@ -256,25 +270,40 @@ document.addEventListener("DOMContentLoaded", function(event) {
           ]
     });
 
-    function showOneNewsOnMobile() {
+    function showSomethingOnMobile() {
         if (document.documentElement.clientWidth < 768) {
             document.querySelectorAll('.news__item').forEach(item => {
-                for (let i = 1; i < document.querySelectorAll('.news__item').length; i++) {
-                    console.log(item)
-                    document.querySelectorAll('.news__item')[i].style.cssText = "display: none"
+                if (document.querySelector('.news--index')) {
+                    for (let i = 1; i < document.querySelectorAll('.news__item').length; i++) {
+                        document.querySelectorAll('.news__item')[i].style.cssText = "display: none"
+                    }
                 }
             })
 
-            $('.equipment__block').slick({
+            $('.equipment__block--about').slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 arrows: true,
                 fade: true,
+                prevArrow: "<img src='../img/svg/right-arrow.svg' class='prev' alt='1'>",
+                nextArrow: "<img src='../img/svg/right-arrow.svg' class='next' alt='2'>",
+            });
+
+            if (document.querySelector('.direction__box')) {
+                document.querySelector('.direction__box').parentNode.removeChild(document.querySelector('.direction__box'))
+            }
+            $('.direction__block').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                fade: true,
+                prevArrow: "<img src='../img/svg/right-arrow.svg' class='prev' alt='1'>",
+                nextArrow: "<img src='../img/svg/right-arrow.svg' class='next' alt='2'>",
             });
 
         }
     }
-    showOneNewsOnMobile();
+    showSomethingOnMobile();
 
     function productSliderAvailable() {
         let postCount = document.querySelectorAll('.product-available__item').length;
@@ -310,15 +339,54 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelectorAll('.open-second-level').forEach(item => {
             item.addEventListener('click', function () {
                 $(this).siblings('ul').slideToggle();
+                let svg = this.querySelector('svg')
+                if (svg.classList.contains('documentation-page__open')) {
+                    svg.classList.remove('documentation-page__open')
+                } else {
+                    svg.classList.add('documentation-page__open')
+                }
             })
         })
         document.querySelectorAll('.open-third-level').forEach(item => {
             item.addEventListener('click', function () {
                 $(this.parentElement).siblings('ul').slideToggle();
+                let svg = this.querySelector('svg')
+                if (svg.classList.contains('documentation-page__open')) {
+                    svg.classList.remove('documentation-page__open')
+                } else {
+                    svg.classList.add('documentation-page__open')
+                }
             })
         })
     }
     openDocumentation();
+
+    // Открытие видео на страницах оборудования
+    function openVideoOnEquipmentPage() {
+        $(document).ready(function() {
+            document.querySelectorAll('.product__mediaRectangle').forEach(item => {
+                
+                item.addEventListener('click', function() {
+                    document.querySelector('.modal__block iframe').src = this.dataset.link
+                    document.querySelector('.modal').classList.add('modal__show')
+                })
+                document.querySelector('.product__mediaText').addEventListener('click', function() {
+                    
+                    document.querySelector('.modal__block iframe').src = this.dataset.link
+                    document.querySelector('.modal').classList.add('modal__show')
+                })
+                document.querySelector('.modal').addEventListener('click', (item) => {
+                    if (item.target.classList.contains('modal__block')) {
+                        document.querySelector('.modal').classList.remove('modal__show')
+                    }
+                })
+                document.querySelector('.modal__close').addEventListener('click', (item) => {
+                    document.querySelector('.modal').classList.remove('modal__show')
+                })
+            })
+        });
+    }
+    openVideoOnEquipmentPage();
 
     // Открытие видео на странице "СПИСОК ПОСТАВЛЯЕМОГО ОБОРУДОВАНИЯ"
     function openVideoOnProductList() {

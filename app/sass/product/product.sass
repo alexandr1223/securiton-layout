@@ -75,6 +75,7 @@
         height: 20px
         position: absolute
         top: 48%
+        cursor: pointer
         right: -100px
 
 .product-available
@@ -145,6 +146,7 @@
             background: #d7e8d3
             position: relative
             margin-left: 15px
+            transition: .4s
             svg
                 position: absolute
                 top: 50%
@@ -153,6 +155,12 @@
                 fill: #4b8a3b
                 width: 14px
                 height: auto
+                transition: .4s
+        &:hover
+            span
+                background: #7ab36c
+                svg
+                    fill: #fff
     &__text
         p
             font-size: 15px
@@ -366,6 +374,7 @@
         transform: translateY(-50%)
         cursor: pointer
         z-index: 2
+        transition: .4s
         img
             width: 14px
             height: auto
@@ -374,6 +383,10 @@
             left: 55%
             transform: translate(-50%, -50%) rotate(180deg)
             margin: 0
+        &:hover
+            background: #7ab36c
+            svg
+                fill: #fff
     .next
         position: absolute
         right: 0
@@ -384,6 +397,7 @@
         transform: translateY(-50%)
         cursor: pointer
         z-index: 2
+        transition: .4s
         img
             width: 16px
             height: auto
@@ -392,7 +406,10 @@
             left: 55%
             margin: 0
             transform: translate(-50%, -50%)
-
+        &:hover
+            background: #7ab36c
+            svg
+                fill: #fff
 .modal
     position: fixed
     top: 0

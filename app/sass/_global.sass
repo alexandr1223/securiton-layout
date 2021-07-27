@@ -162,9 +162,9 @@ a
 		display: flex
 		flex-direction: column
 		align-items: center
+		padding-top: 14px
 	&__menu
 		margin-left: auto
-		padding: 11px
 		width: 65px
 		height: 61px
 		background: url('../img/svg/menu.png') center center/cover no-repeat
@@ -252,12 +252,16 @@ a
 	.sub-menu
 		opacity: 0
 		height: 0
+		z-index: -20
+		visibility: hidden
 		transition: .5s
 		margin-left: 20px
 		&__open
 			opacity: 1
 			height: 182px
+			visibility: visible
 			margin-bottom: 20px
+			z-index: 1
 		li
 			&::before
 				content: ''
@@ -300,6 +304,8 @@ a
 		font-size: 15px
 		display: flex
 		flex-direction: column
+		&--mobile
+			display: none
 		span
 			opacity: .5
 			&:not(:last-child)

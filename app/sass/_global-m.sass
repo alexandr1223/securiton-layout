@@ -19,12 +19,19 @@
             margin-right: 100px
         &__open
             align-items: center
-            margin-top: 10px
+            padding-top: 20px
             span
                 display: none
         &__close
             width: 46px
             height: 44px
+
+    .menu
+        &__more
+            span
+                margin-bottom: 20px
+            svg
+                height: 22px
 
     .breadCrumbs
         margin-top: 37px
@@ -37,6 +44,9 @@
         &__subtitle
             margin-top: 10px
             font-size: 20px
+
+    .wrapper
+        overflow: hidden
 
     .footer
         width: 950px
@@ -74,7 +84,7 @@
             svg
                 min-width: 18px
 
-@media (max-width: 768px)
+@media (max-width: 991px)
     .footer
         display: flex
         flex-direction: column-reverse
@@ -96,18 +106,38 @@
         &__menu
             width: 100%
             flex-direction: column
+        &__contact
+            &:not(:last-child)
+                margin-bottom: 10px
         &__list
             width: max-content
             margin: 0 auto
+            margin-bottom: 32px
             li
                 margin: 0 auto
                 width: max-content
+                font-size: 15px
                 &:not(:last-child)
-                    margin-bottom: 10px
+                    margin-bottom: 4px
         &__equipmentTitle
             text-align: center
         &__equipmentText
             text-align: center
+            p
+                margin-bottom: 4px
+        &__reserve
+            display: none
+            &--mobile
+                display: flex
+                text-align: center
+                &::before
+                    margin: 0 auto
+                    margin-top: 28px
+                    margin-bottom: 28px
+        &__contactBlock
+            display: flex
+            flex-direction: column
+            margin: 0 auto
 
     .breadCrumbs
         margin-bottom: 30px
@@ -116,4 +146,34 @@
         &__title
             font-size: 25px
             text-align: center
-            
+        &__subtitle
+            font-size: 15px
+            text-align: center
+
+    .header
+        &__menu
+            position: static
+        &__open
+            padding-top: 0
+        &__close
+            width: 25px
+            height: 25px
+            right: 35px
+            top: 20px
+            z-index: 11
+            svg
+                width: 15px
+                height: auto
+    .menu
+        width: 100%
+        right: 0
+        height: 100vh
+        padding-top: 20px
+        padding: 20px
+        top: 0
+        z-index: 10
+        &__more
+            span
+                margin-bottom: 20px
+            svg
+                height: 22px

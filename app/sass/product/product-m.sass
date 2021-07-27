@@ -23,10 +23,25 @@
         margin-bottom: 75px
     .product-download
         margin-bottom: 40px
+    .modal
+        &__close
+            top: 30px
+            right: 30px
+            svg
+                width: 30px
+                height: 30px
 
-@media (max-width: 768px)
+@media (max-width: 991px)
+    .modal
+        &__close
+            top: 20px
+            right: 20px
+            svg
+                width: 20px
+                height: 20px
     .product
         margin-bottom: 57px
+        margin-top: 0
         &__block
             display: flex
             flex-direction: column-reverse
@@ -36,16 +51,20 @@
                 &__num
                     font-size: 78px
                     line-height: 56px
-                    margin-right: 20px
+                    margin-right: 10px
+                    letter-spacing: -.01em
                     &::before
-                        margin-right: 17px
+                        margin-right: 4px
                         height: 56px
                 &__text
                     font-size: 15px
+                    max-width: 100%
         &__text
             max-width: 100%
             margin: 0 auto
             margin-top: 30px
+            p
+                text-align: center
         &__media
             margin: 0 auto
             position: relative
@@ -82,21 +101,27 @@
             margin-bottom: 0
             margin-left: 0
         &__block
-            padding-top: 53px
+            padding-top: 73px
             padding-left: 0
-            width: 100%
+            width: 288px
+            padding-bottom: 30px
         &__box
             min-width: 100%
-            width: calc(100% + 10px)
+            width: 100%
             margin-left: 10px
+            padding: 57px 15px 25px 15px
         &__image
             margin-left: -40px
         &__top
+            display: flex
+            flex-direction: column
         &__itemTitle
             text-align: center
             margin: 0 auto
+            font-size: 17px
+            margin-bottom: 20px
         &__item
-            width: 100%
+            min-width: calc(100% - 12px)
             &:not(:last-child)
                 margin-right: 50px
             margin-left: 0
@@ -108,3 +133,91 @@
         &__linkText
             font-size: 15px
             margin-left: 40px
+        &__text
+            p
+                font-size: 15px
+                text-align: center
+        &__box
+            min-width: calc(100% - 10px)
+            width: calc(100% - 10px)
+            min-height: 430px
+    .product-content
+        &__text
+            margin-left: 0
+            p
+                font-size: 15px
+                text-align: center
+                line-height: 22px
+        &__block
+            display: flex
+            flex-direction: column
+        &__top
+            margin-top: 0
+        &__greenTitle
+            font-size: 20px
+            text-align: center
+            margin-bottom: 30px
+        &__greenText
+            font-size: 15px
+            text-align: center
+            line-height: 22px
+        &__green
+            margin-left: -20px
+            width: calc(100% + 40px)
+            padding: 15px 50px 15px 50px
+        &__ladder
+            width: calc( 100% + 40px )
+            img 
+                margin-left: -20px
+        &__light
+            display: none
+    .product-slider
+        padding: 36px 0
+        margin-bottom: 20px
+        &__title
+            max-width: 100%
+            margin-bottom: 44px
+    .product-feature
+        margin-bottom: 100px
+        &__title
+            margin-bottom: 40px
+        &__block
+            grid-template-columns: 1fr
+        &__text
+            font-size: 17px
+            line-height: 22px
+        &__img
+            margin-right: 10px
+            min-width: 66px
+            svg
+                margin: 0
+                margin-left: auto
+    .product-download
+        &__text
+            width: 100%
+            &::after
+                display: none
+            &::before 
+                display: none
+        &__link 
+            position: relative
+            &::before
+                content: ''
+                position: absolute
+                left: 0px
+                top: 50%
+                transform: translateY(-50%)
+                background-color:  #7ab36c
+                opacity: .5
+                width: 38px
+                height: 2px
+            &::after
+                content: ''
+                position: absolute
+                right: 0px
+                top: 50%
+                transform: translateY(-50%)
+                background-color:  #7ab36c
+                opacity: .5
+                width: 38px
+                height: 2px

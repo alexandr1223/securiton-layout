@@ -476,6 +476,8 @@
         margin-bottom: 30px
     .container  
         position: relative
+    &__readMore
+        display: none
     &__bigText
         position: absolute
         transform: rotate(-90deg)
@@ -553,6 +555,7 @@
 
 .completed
     margin-bottom: 50px
+    position: relative
     &__block
         display: grid
         grid-template-columns: 1fr
@@ -569,23 +572,30 @@
         transition: .4s
         height: auto
     &__nav
-        opacity: 0
+        visibility: hidden
         height: 0
         transition: .3s
-        .prev
-            position: absolute
-            left: -200px
-            top: 100%
-            width: 20px
-            height: auto
-            transform: rotate(180deg)
-        .next
-            position: absolute
-            left: -100px
-            width: 20px
-            height: auto
+        display: flex
+        overflow: hidden
+        z-index: 1
         img
             margin: 0 10px
+            transition: 4s
+    &__prev
+        position: absolute
+        left: 30px
+        bottom: 50px
+        width: 20px
+        height: auto
+        transform: rotate(180deg)
+        z-index: 20
+    &__next
+        position: absolute
+        left: 140px
+        width: 20px
+        bottom: 50px
+        height: auto
+        z-index: 20
     &__itemTitle
         font-size: 40px
         line-height: 100%
@@ -608,11 +618,19 @@
         position: absolute
         left: -330px
         top: -100px
-        img
-            width: 510px
-            height: 240px
-            object-fit: cover
-            transition: .4s
+        opacity: 1
+        
+        width: 510px
+        height: 240px  
+        visibility: visible
+        transition: 4s
+        object-fit: cover
+        filter: grayscale(100%)
+        &--open
+            transition: .4s 
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 55% 80%, 55% 100%, 0 100%)
+            filter: unset
+            height: 100%
     &__open
         position: absolute
         right: -6px
@@ -634,6 +652,7 @@
         transition: .4s
     .openCompletedProject
         opacity: 1
+        visibility: visible
         height: 150px
         margin-top: 94px
     &__info
@@ -719,8 +738,10 @@
         width: 100%
         img
             width: 100%
-    &__title
-        margin-bottom: 
+    &__country
+        display: none
+    &__mobile
+        display: none
 
 
 .documentation-page
@@ -769,6 +790,11 @@
                     background: #7ab36c
                     opacity: .5
                     top: 50%
+        a
+            transition: .4s
+            text-decoration: underline
+            &:hover
+                color: #bababa
 
     .second-level
         margin-left: 50px

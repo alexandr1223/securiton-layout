@@ -100,9 +100,11 @@
     .contact-map
         margin-top: 57px
 
-@media (max-width: 768px)
+@media (max-width: 991px)
     .about
         padding-top: 88px
+        background: url('../img/about-bg-mobile.png') center center/cover no-repeat
+        height: 1610px
         &__title
             text-align: center
             font-size: 24px
@@ -125,31 +127,154 @@
         &__number
             right: 0
             align-items: flex-start
+            position: static
+            width: 185px
+            margin-bottom: 10px
+        &__numberItem
+            font-size: 50px
+            line-height: 50px
+            &::before
+                height: 45px
+            span
+                font-size: 25px
+        &__allNumbers
+            margin-left: auto
+            margin-top: 50px
+            display: flex
+            flex-direction: column
+            align-items: flex-end
+        &__numberText
+            font-size: 15px
+            margin-top: 8px
     .direction
+        margin-top: -600px
         &__title
             margin: 0 auto
             width: max-content
             max-width: 100%
             margin-bottom: 48px
+        &__item
+            width: 100%
+            height: 100%
+            min-width: unset
+            border: solid 3px rgba(122,179,108,0.3)
+            &::before
+                display: none
+            &::after
+                display: none
+            &--hide
+                display: block
+        .slick-list 
+            
+            padding-top: 16px
+            padding-left: 10px
+        &__icon
+            left: -10px
+            top: -16px
+        &__itemTitle
+            font-size: 17px
+        .prev
+            position: absolute
+            left: -10px
+            top: 50%
+            width: 34px
+            height: 34px
+            cursor: pointer
+            transform: translate(-50%, -50%) rotate(180deg)
+            
+        .next
+            position: absolute
+            right: -54px
+            top: 50%
+            width: 34px
+            height: 34px
+            cursor: pointer
+            transform: translate(-50%, -50%)
     .equipment
+        &--page
+            margin-top: 4px
         &__title
             max-width: 270px
+            margin-bottom: 30px
         &__block
             display: block
             grid-gap: unset
             margin: 0 auto
-            padding-top: 50px
+            padding-top: 0
+        &__box
+            padding: 25px
+        &__itemTitle
+            width: 100%
+            font-size: 18px
+            text-align: center
+            margin-bottom: 20px
+            margin-top: 70px
+        &__linkText
+            display: none
+        &__linkList
+            margin-right: 10px
+        &__link
+            margin-right: 0
+            margin: 0 auto
+            span
+                margin-left: 0
+                margin: 0 auto
+        &__item
+            padding-top: 60px
+            padding-left: 10px
+            width: 100%
+            &--page
+                &:not(:last-child)
+                    margin-bottom: 50px
+        &__video
+            width: 67px
+            height: 67px
+            svg
+                width: 25px
+                height: auto
+        &__image
+            left: -10px
+            top: -60px
+            img
+                max-width: 70%
+        &__text
+            p
+                font-size: 15px
+                text-align: center
+        .prev
+            position: absolute
+            left: -20px
+            top: 50%
+            width: 34px
+            height: 34px
+            cursor: pointer
+            transform: translate(-50%, -50%) rotate(180deg)
+            
+        .next
+            position: absolute
+            right: -60px
+            top: 50%
+            width: 34px
+            height: 34px
+            cursor: pointer
+            transform: translate(-50%, -50%)
     .sertificate
+        .container
+            padding: 0
+        &__title
+            margin-bottom: 290px
         &__block
-            width: 80%
+            width: 100%
+            max-width: 250px
             margin-left: 0
             margin: 0 auto
-            padding: 20px
+            padding: 33px 10px 31px 10px
+            padding-top: 80px
         &__for
             left: 50%
             transform: translateX(-50%)
-            top: -200px
-            width: 60%
+            top: -190px
+            width: 75%
             height: auto
             img
                 width: 100%
@@ -157,8 +282,19 @@
         &__nav
             width: 100%
             img
-                width: 40px !important
-                height: auto
-                margin: 0 auto
+                margin: 0 15px
         .prev
-            left: -50px
+            left: -67px
+        .next
+            right: -67px
+        &__bigText
+            top: 60px
+            font-size: 39px
+            left: 50%
+            transform: translate(-50%)
+        &__zoom
+            svg
+                width: 35px
+                height: 35px
+                margin-left: 5px
+                margin-top: 5px
