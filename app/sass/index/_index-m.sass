@@ -5,6 +5,10 @@
             font-size: 50px
         &__subtitle
             font-size: 17px
+        &__bigTitle
+            font-size: 70px
+            top: -12px
+            right: -140px
     .first-content
         margin-top: -900px
         &__block
@@ -90,6 +94,12 @@
                 text-align: right
             a
                 white-space: nowrap
+    .completed
+        &__item
+            width: 721px
+        &__boxImage
+            width: 415px
+            left: -240px
 
 @media (max-width: 991px)
     .container
@@ -114,26 +124,10 @@
         &::before
             min-width: 4px
             margin-right: 14px
-    .header
-        &__nav
-            padding-top: 23px
-        &--first
-            width: 100%
-        &__logo
-            margin-top: 0
-        &__address
-            display: none
-        &__link
-            display: none
-        &__menu
-            background: unset
-            height: 16px
-            width: 24px
-            padding: 0
-        &__open
-            margin-top: 0
     .first
         padding-top: 88px
+        background: url('../img/first-m-bg.png') center center/cover no-repeat
+        height: 1400px
         &__title
             text-align: center
             font-size: 24px
@@ -142,6 +136,12 @@
             span
                 display: block
                 font-family: "Har-Bold"
+        &__bigTitle
+            font-size: 70px
+            z-index: 1
+            top: -40px
+            left: -10%
+            opacity: .7
         &__subtitle
             width: 100%
             font-size: 15px
@@ -190,8 +190,80 @@
                 display: none
         &__catalogBtn
             font-size: 15px
+    .completed
+        margin-top: 100px
+        &__nav
+            position: absolute
+            top: 190px
+            height: 30px
+            left: 50%
+            transform: translateX(-50%)
+            span
+                font-size: 25px
+                margin: 4px 0
+        &__block
+            grid-gap: 115px
+        &__currentNum
+            font-size: 25px
+        &__lengthNum
+            font-size: 15px 
+            margin-top: 12px
+        &__prev
+            margin-right: 20px
+            width: 7px
+            margin-top: 10px
+        &__next
+            margin-left: 20px
+            width: 7px
+        &__item
+            width: 100%
+            border: 1px solid #000
+            padding: 100px 20px 60px 20px
+            &--open
+                padding-top: 300px
+        &__itemSubtitle
+            margin-left: 0
+            margin: 0 auto
+            font-size: 17px
+            margin-bottom: 40px
+            margin-bottom: 15px
+        &__itemTitle
+            text-align: center
+            margin: 0 auto
+            font-size: 25px
+        &__box            
+            position: static
+            border: 0
+            padding: 0 !important
+        &__boxTitle,
+        &__boxText
+            height: 0
+            visibility: hidden
+            text-align: center
+        &__boxTitle
+            margin-bottom: 0
+        &__open
+            left: 50%
+            transform: translateX(-50%)
+            bottom: 0px
+            top: unset
+        &__images
+            img
+                margin: 0 auto
+                display: none
+        &__boxImage
+            display: block !important
+            height: 150px
+            left: 50%
+            width: 250px
+            transform: translate(-50%)
+            top: -70px
+            &--open
+                height: 250px
+                clip-path: unset
     .first-content
         margin-bottom: 30px
+        margin-top: -530px
         &__preview
             flex-direction: column
         .preview
@@ -242,26 +314,78 @@
         &__whitebtn
             margin: 0 auto
     .product-list
-        display: none
         .slick-track
             padding-top: 50px
         &__item
-            margin: 0 30px
+            margin: 0 10px
+            width: 100%
+            padding: 0 15px 24px 15px
+        &__itemTitle
+            font-size: 17px
+            margin-bottom: 20px
+            text-align: center
+        &__itemText
+            text-align: center
+        &__video
+            width: 67px
+            height: 67px
+            svg
+                width: 25px
+                height: auto
+        &__top
+            height: 100px
+            img
+                max-width: 70%
+                max-height: 100%
+                left: -28px
+                top: -30px
+        .next
+            right: -40px
+        .prev
+            left: -45px
+        &__documentation
             width: 100%
     .partner
+        padding-top: 40px
+        .container  
+            width: 100%
         &__image
             position: static
             display: flex
             flex-direction: column-reverse
+        &__pc
+            display: none
+        &__mobile
+            display: block
+            background: url('../img/partner-m-main.png') center center/cover no-repeat
+            width: 100%
+            max-width: 414px
+            height: 500px
+            margin: 0 auto
+            margin-bottom: -60px
+            margin-top: -170px
+        &__slider
+            max-width: 288px
+            margin: 0 auto
         &__details
             position: static
+            margin: 0 auto
+            max-width: 288px
+            display: flex
+            width: 200px
             &::before
+                position: absolute
                 height: 60px
+                left: unset
+            span
+                margin-left: 17px
         &__preview
             width: 80%
             margin: 0 auto
             margin-bottom: 36px
         .preview
+            max-width: 288px
+            width: 100%
             &__num
                 font-size: 62px
                 line-height: 40px
@@ -274,7 +398,9 @@
         &__text
             text-align: center
             font-size: 15px
+            margin: 0 auto
             margin-bottom: 60px
+            max-width: 288px
         &__bigText
             font-size: 56px
             text-align: center
@@ -285,7 +411,7 @@
         &__title
             margin-bottom: 187px
         &__block
-            width: 80%
+            width: 100%
             max-width: 400px
             padding: 90px 30px 35px 30px
             display: flex
@@ -307,6 +433,8 @@
                 &::before
                     display: none
         &__btn
+            margin: 0 auto
+        &__all
             margin: 0 auto
     .documentation-page
         margin-top: 134px
@@ -358,6 +486,8 @@
 
     .news
         margin-bottom: 40px
+        &--index
+            margin-bottom: 10px
         &__nav
             display: flex
             flex-direction: column
@@ -405,6 +535,8 @@
                 margin: 0 auto
         &__date
             font-size: 15px
+        &__bigText
+            display: none
     .contact
         margin-bottom: 34px
         margin-top: 125px

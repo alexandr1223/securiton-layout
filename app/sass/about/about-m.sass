@@ -20,6 +20,8 @@
             font-size: 110px
             left: -365px
             top: 330px
+        &__bigTitle
+            font-size: 70px
     .direction
         margin-top: -815px
         margin-bottom: 75px
@@ -103,12 +105,20 @@
 @media (max-width: 991px)
     .about
         padding-top: 88px
-        background: url('../img/about-bg-mobile.png') center center/cover no-repeat
-        height: 1610px
+        background: url('../img/about-m-bg.png') center center/cover no-repeat
+        height: 1710px
+        &__bigTitle
+            font-size: 70px
+            z-index: 1
+            top: -40px
+            left: -20%
+            opacity: .7
         &__title
             text-align: center
             font-size: 24px
             margin-bottom: 38px
+            position: relative
+            z-index: 2
         &__text
             text-align: center
             font-size: 15px
@@ -147,7 +157,7 @@
             font-size: 15px
             margin-top: 8px
     .direction
-        margin-top: -600px
+        margin-top: -620px
         &__title
             margin: 0 auto
             width: max-content
@@ -164,6 +174,8 @@
                 display: none
             &--hide
                 display: block
+        &__block
+            margin-left: 0
         .slick-list 
             
             padding-top: 16px
@@ -243,7 +255,7 @@
                 text-align: center
         .prev
             position: absolute
-            left: -20px
+            left: -12px
             top: 50%
             width: 34px
             height: 34px
@@ -252,7 +264,7 @@
             
         .next
             position: absolute
-            right: -60px
+            right: -52px
             top: 50%
             width: 34px
             height: 34px

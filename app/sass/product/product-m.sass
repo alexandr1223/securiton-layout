@@ -23,7 +23,8 @@
         margin-bottom: 75px
     .product-download
         margin-bottom: 40px
-    .modal
+    .modal,
+    .modal-video
         &__close
             top: 30px
             right: 30px
@@ -32,7 +33,8 @@
                 height: 30px
 
 @media (max-width: 991px)
-    .modal
+    .modal,
+    .modal-video
         &__close
             top: 20px
             right: 20px
@@ -171,12 +173,24 @@
                 margin-left: -20px
         &__light
             display: none
+        &__listBlock
+            grid-template-columns: 1fr
+            grid-gap: 20px
     .product-slider
         padding: 36px 0
         margin-bottom: 20px
         &__title
             max-width: 100%
             margin-bottom: 44px
+        &__item
+            img
+                margin: 0 30px
+        &__zoom
+            width: 65px
+            height: 65px
+            svg
+                width: 30px
+                height: 30px
     .product-feature
         margin-bottom: 100px
         &__title

@@ -13,8 +13,16 @@
         color: #3f3f3f
         font-family: "Har-Bold"
         margin-bottom: 20px
+        position: relative
+        z-index: 2
         span
             color: #4b8a3b
+    &__bigTitle
+        font-size: 98px
+        position: absolute
+        z-index: 1
+        right: -50px
+        top: -20px
     &__subtitle
         font-size: 18px
         background: #7ab36c
@@ -111,7 +119,7 @@
 
 .first-content
     margin-top: -760px
-    margin-bottom: 66px
+    margin-bottom: 140px
     overflow-x: hidden
     position: relative
     z-index: 2
@@ -203,10 +211,13 @@
             object-fit: cover
 
 .partner
-    margin-bottom: 200px
+    margin-bottom: 150px
     padding-top: 300px
+    overflow: hidden
     .preview__text
         max-width: 250px
+    &__mobile
+        display: none
     &__block
         position: relative
     &__image
@@ -346,6 +357,12 @@
         padding: 0 30px 55px 30px
         position: relative
         margin: 0 40px
+    &__itemTitle
+        font-weight: 400
+        margin-bottom: 25px
+        font-size: 20px
+    &__itemText
+        font-size: 15px
     &__image
         position: absolute
         bottom: 15px
@@ -426,7 +443,7 @@
             transform: translate(-50%, -50%)
 
 .documentation
-    margin-bottom: 230px
+    margin-bottom: 160px
     &__title
         margin-bottom: 158px
     &__block
@@ -553,6 +570,167 @@
                 height: auto
                 fill: #7ab36c
 
+.realised
+    margin-bottom: 88px
+    position: relative
+    &__block
+        display: grid
+        grid-template-columns: 1fr
+        grid-gap: 88px
+    &__item
+        display: flex
+        flex-direction: column
+        margin-left: auto
+        width: 817px
+        position: relative
+    &__box
+        border: 6px solid  rgba(122, 179, 108, .3)
+        padding: 125px 40px 125px 245px
+        position: relative
+        transition: .4s
+        height: auto
+    &__nav
+        position: absolute
+        bottom: 60px
+        left: 40px
+        display: flex
+        align-items: center
+        transition: .4s
+        &--open
+            opacity: 1
+        span
+            font-size: 45px
+            color: #c2c2c2
+            font-weight: 300
+            font-family: "Har-Light"
+            margin-top: 4px
+            margin-left: 2px
+            margin-right: 2px
+    &__currentNum
+        font-size: 45px
+        color: #7ab36c
+    &__lengthNum
+        font-size: 17px
+        margin-top: 20px
+        color: #c2c2c2
+    &__prev
+        position: absolute
+        bottom: 20px
+        width: 10px
+        right: 100px
+        height: auto
+        transform: rotate(180deg)
+        z-index: 20
+        cursor: pointer
+        svg
+            fill: #bdbdbd
+    &__next
+        position: absolute
+        margin-left: 20px
+        width: 10px
+        right: -50px
+        bottom: 20px
+        height: auto
+        cursor: pointer
+        z-index: 20
+    &__itemTitle
+        font-size: 40px
+        line-height: 100%
+        margin-left: 245px
+        color: #454545
+        margin-bottom: 50px
+        &::before
+            min-width: 4px
+    &__link
+        font-size: 17px
+        margin-top: 20px
+        color: #7ab36c
+        display: flex
+        line-height: 17px
+        align-items: center
+        svg
+            width: 10px
+            height: 10px
+            margin-left: 10px
+    &__itemSubtitle
+        font-size: 25px
+        line-height: 100%
+        margin-bottom: 30px
+        margin-left: 245px
+        color: #454545
+    &__boxTitle
+        font-size: 25px
+        margin-bottom: 30px
+    &__boxText
+        font-size: 17px
+        &:not(:last-child)
+            margin-bottom: 25px
+        span
+            font-weight: 500
+    &__images
+        visibility: hidden
+        height: 0
+        transition: .3s
+        display: flex
+        overflow: hidden
+        z-index: 1
+        img
+            transition: .4s
+            position: relative
+            display: block
+            &::before
+                content: ''
+                display: block
+                position: absolute
+                top: 0
+                left: 0
+                height: 200px
+                width: 200px
+                background: rgba(0, 0, 0, 1)
+    &__boxImage
+        position: absolute !important
+        left: -330px
+        top: -190px
+        opacity: 1
+        width: 510px
+        height: 240px  
+        visibility: visible
+        transition: 4s
+        z-index: 1
+        object-fit: cover
+        filter: grayscale(100%)
+        &--open
+            transition: .4s 
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 55% 80%, 55% 100%, 0 100%)
+            filter: unset
+            height: 540px
+    &__air
+        height: 0
+        transition: .4s
+    .openCompletedProject
+        opacity: 1
+        visibility: visible
+        height: 150px
+        margin-top: 94px
+    &__info
+        display: flex
+        margin-top: 10px
+        border-top: 1px solid #d9d9d9
+        justify-content: space-between
+        padding-top: 20px
+        align-items: center
+        span
+            font-size: 15px
+        a
+            font-size: 17px
+            color: #7ab36c
+            margin-left: auto
+            svg
+                width: 10px
+                height: auto
+                fill: #7ab36c
+    
+
 .completed
     margin-bottom: 50px
     position: relative
@@ -563,8 +741,9 @@
     &__item
         display: flex
         flex-direction: column
-        margin-left:  auto
+        margin-left: auto
         width: 817px
+        position: relative
     &__box
         border: 6px solid  rgba(122, 179, 108, .3)
         padding: 45px 40px 45px 245px
@@ -572,29 +751,48 @@
         transition: .4s
         height: auto
     &__nav
-        visibility: hidden
-        height: 0
-        transition: .3s
-        display: flex
-        overflow: hidden
-        z-index: 1
-        img
-            margin: 0 10px
-            transition: 4s
-    &__prev
         position: absolute
-        left: 30px
-        bottom: 50px
-        width: 20px
+        bottom: 60px
+        left: 40px
+        display: flex
+        align-items: center
+        opacity: 0
+        transition: .4s
+        &--open
+            opacity: 1
+        span
+            font-size: 45px
+            color: #c2c2c2
+            font-weight: 300
+            font-family: "Har-Light"
+            margin-top: 4px
+            margin-left: 2px
+            margin-right: 2px
+    &__currentNum
+        font-size: 45px
+        color: #7ab36c
+    &__lengthNum
+        font-size: 17px
+        margin-top: 20px
+        color: #c2c2c2
+    &__prev
+        position: static
+        margin-right: 20px
+        bottom: 0px
+        width: 10px
         height: auto
         transform: rotate(180deg)
         z-index: 20
+        cursor: pointer
+        svg
+            fill: #bdbdbd
     &__next
-        position: absolute
-        left: 140px
-        width: 20px
-        bottom: 50px
+        position: static
+        margin-left: 20px
+        width: 10px
+        bottom: 0px
         height: auto
+        cursor: pointer
         z-index: 20
     &__itemTitle
         font-size: 40px
@@ -614,12 +812,32 @@
         margin-bottom: 26px
     &__boxText
         font-size: 17px
+    &__images
+        visibility: hidden
+        height: 0
+        transition: .3s
+        display: flex
+        overflow: hidden
+        z-index: 1
+        img
+            margin: 0 10px
+            transition: .4s
+            position: relative
+            display: block
+            &::before
+                content: ''
+                display: block
+                position: absolute
+                top: 0
+                left: 0
+                height: 200px
+                width: 200px
+                background: rgba(0, 0, 0, 1)
     &__boxImage
-        position: absolute
+        position: absolute !important
         left: -330px
         top: -100px
         opacity: 1
-        
         width: 510px
         height: 240px  
         visibility: visible
@@ -630,7 +848,7 @@
             transition: .4s 
             clip-path: polygon(0 0, 100% 0, 100% 80%, 55% 80%, 55% 100%, 0 100%)
             filter: unset
-            height: 100%
+            height: 540px
     &__open
         position: absolute
         right: -6px
@@ -640,6 +858,7 @@
         background: #d7e8d3
         cursor: pointer
         svg
+            transition: .4s
             width: 10px
             height: auto
             fill: #7ab36c
