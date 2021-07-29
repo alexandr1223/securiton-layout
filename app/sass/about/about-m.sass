@@ -101,6 +101,17 @@
             right: 13px
     .contact-map
         margin-top: 57px
+    .quality
+        height: 450px
+        &__image
+            width: 80%
+        &__info
+            max-width: 40%
+            top: 0
+            right: 30px
+            left: unset
+        &__title
+            margin-bottom: 20px
 
 @media (max-width: 991px)
     .about
@@ -310,3 +321,45 @@
                 height: 35px
                 margin-left: 5px
                 margin-top: 5px
+    .international
+        &__title
+            font-size: 36px
+    .international-about
+        &__block
+            display: flex
+            flex-direction: column
+        &__green
+            margin-left: 0
+            margin-top: 20px
+        &__stat
+            margin-top: 30px
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-gap: 20px 0
+        &__item
+            span
+                font-size: 36px
+                margin-bottom: 10px
+            p
+                font-size: 15px
+                &::before
+                    margin-bottom: 10px
+    .about-group
+        &__circle
+            margin-top: 20px
+    .quality
+        height: auto
+        display: flex
+        flex-direction: column
+        width: 288px
+        margin: 0 auto
+        padding-bottom: 40px
+        &__image
+            position: static
+            width: 100%
+        &__info
+            position: static
+            max-width: 100%
+        &__title
+            margin-left: 0
+            margin-bottom: 20px

@@ -17,6 +17,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }, 'xml');
     }); 
 
+    $(window).scroll(function () {
+        var height = $(window).scrollTop();
+        if (height > 60) {
+            document.querySelector('.header').classList.add('header__scroll')
+        } else {
+            document.querySelector('.header').classList.remove('header__scroll')
+        }
+    
+    });
+
     // Открытие меню на ПК версии
     function desktopMenu() {
         document.querySelector('.header__close').addEventListener('click', (item) => {
@@ -189,43 +199,46 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
     function realiseSlider() {
-        let num = 1;
-        document.querySelector('.realised__next').addEventListener('click', function(item) {
-            let currentItem = document.querySelector('.realised__boxImage');
-            currentItem.classList.remove('realised__boxImage', 'completed__boxImage--open')
-            document.querySelectorAll('.realised__images img')[0].before(currentItem)
-            
-            let lastImage = $(document.querySelectorAll('.realised__images img')).length - 1
-            let images = document.querySelectorAll('.realised__images img')[lastImage]
-            images.classList.add('realised__boxImage', 'completed__boxImage--open');
-            document.querySelectorAll('.realised__images img')[0].before(images)
-
-            // Изменение нумерации изображения
-            num++;
-            if (document.querySelectorAll('.realised__images img').length >= num) {
-                document.querySelector('.realised__currentNum').textContent = '0' + num;
-            } else {
-                num = 1;
-                document.querySelector('.realised__currentNum').textContent = '0' + num;
-            }
-            
-        })
-        document.querySelector('.realised__prev').addEventListener('click', function(item) {
-            
-            document.querySelector('.realised__boxImage').nextElementSibling.classList.add('realised__boxImage', 'realised__boxImage--open')
-            let currentItem = document.querySelector('.realised__boxImage');
-            currentItem.classList.remove('realised__boxImage', 'realised__boxImage--open');
-            document.querySelector('.realised__images').append(currentItem)
-            // Изменение нумерации изображения
-            num--;
-            if (num < 1) {
-                num = document.querySelectorAll('.realised__images img').length;
-                document.querySelector('.realised__currentNum').textContent = '0' + num;
+        if (document.querySelector('.realised')) {
+            let num = 1;
+            document.querySelector('.realised__lengthNum').textContent = '0' + $('.realised__images img').length
+            document.querySelector('.realised__next').addEventListener('click', function(item) {
+                let currentItem = document.querySelector('.realised__boxImage');
+                currentItem.classList.remove('realised__boxImage', 'completed__boxImage--open')
+                document.querySelectorAll('.realised__images img')[0].before(currentItem)
                 
-            } else {
-                document.querySelector('.realised__currentNum').textContent = '0' + num;
-            }
-        })
+                let lastImage = $(document.querySelectorAll('.realised__images img')).length - 1
+                let images = document.querySelectorAll('.realised__images img')[lastImage]
+                images.classList.add('realised__boxImage', 'completed__boxImage--open');
+                document.querySelectorAll('.realised__images img')[0].before(images)
+
+                // Изменение нумерации изображения
+                num++;
+                if (document.querySelectorAll('.realised__images img').length >= num) {
+                    document.querySelector('.realised__currentNum').textContent = '0' + num;
+                } else {
+                    num = 1;
+                    document.querySelector('.realised__currentNum').textContent = '0' + num;
+                }
+                
+            })
+            document.querySelector('.realised__prev').addEventListener('click', function(item) {
+                
+                document.querySelector('.realised__boxImage').nextElementSibling.classList.add('realised__boxImage', 'realised__boxImage--open')
+                let currentItem = document.querySelector('.realised__boxImage');
+                currentItem.classList.remove('realised__boxImage', 'realised__boxImage--open');
+                document.querySelector('.realised__images').append(currentItem)
+                // Изменение нумерации изображения
+                num--;
+                if (num < 1) {
+                    num = document.querySelectorAll('.realised__images img').length;
+                    document.querySelector('.realised__currentNum').textContent = '0' + num;
+                    
+                } else {
+                    document.querySelector('.realised__currentNum').textContent = '0' + num;
+                }
+            })
+        }
     }
     realiseSlider();
 
@@ -249,6 +262,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     }
     openImage();
+
+    // Зум изображений
+    function openPartnerImage() {
+        $(document).ready(function() {
+            document.querySelectorAll('.partner__zoom').forEach(item => {
+                item.addEventListener('click', function() {
+                    document.querySelector('.modal__block img').src = this.parentElement.querySelector('img').src
+                    document.querySelector('.modal').classList.add('modal__show')
+                })
+                document.querySelector('.modal').addEventListener('click', (item) => {
+                    if (item.target.classList.contains('modal__block')) {
+                        document.querySelector('.modal').classList.remove('modal__show')
+                    }
+                })
+                document.querySelector('.modal__close').addEventListener('click', (item) => {
+                    document.querySelector('.modal').classList.remove('modal__show')
+                })
+            })
+        });
+    }
+    openPartnerImage();
 
     // Показ недостающих элементов на смартфонах
     function showSomethingOnMobile() {
@@ -414,6 +448,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     openVideoOnProductList();
 
+    // Открытие видео на странице "Главная"
+    function openProductListVideo() {
+        $(document).ready(function() {
+            document.querySelectorAll('.product-list__video').forEach(item => {
+                item.addEventListener('click', function() {
+                    
+                    document.querySelector('.modal-video__block iframe').src = this.dataset.link
+                    document.querySelector('.modal-video').classList.add('modal-video__show')
+                })
+                document.querySelector('.modal-video').addEventListener('click', (item) => {
+                    if (item.target.classList.contains('modal-video__block')) {
+                        document.querySelector('.modal-video').classList.remove('modal-video__show')
+                    }
+                })
+                document.querySelector('.modal-video__close').addEventListener('click', (item) => {
+                    document.querySelector('.modal-video').classList.remove('modal-video__show')
+                })
+            })
+        });
+    }
+    openProductListVideo();
+
     // Открытие блока документации при клике
     function showDocumentation() {
         let documentLink = document.querySelector('.documentation__link--doc'),
@@ -546,42 +602,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
           ]
     });
-
-    // $('.realised__images').slick({
-    //     dots: false,
-    //     infinite: true,
-    //     speed: 300,
-    //     slidesToShow: 1,
-    //     arrows: true,
-    //     prevArrow: "<div class='prev'><img src='../img/svg/right-arrow.svg' alt='1'></div>",
-    //     nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' alt='2'></div>",
-    //     responsive: [
-    //         {
-    //           breakpoint: 1200,
-    //           settings: {
-    //             slidesToShow: 3,
-    //             slidesToScroll: 1
-    //           }
-    //         },
-    //         {
-    //           breakpoint: 991,
-    //           settings: {
-    //             slidesToShow: 1,
-    //             slidesToScroll: 1
-    //           }
-    //         },
-    //         {
-    //           breakpoint: 768,
-    //           settings: {
-    //             slidesToShow: 1,
-    //             slidesToScroll: 1
-    //           }
-    //         }
-    //       ]
-    // });
-    // $(".realised__images").on('afterChange', function(event, slick, currentSlide){
-    //     $("#cp").text(currentSlide + 1);
-    //  });
 
     $('.partner__slider').slick({
         dots: false,

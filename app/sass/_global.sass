@@ -134,11 +134,38 @@ a
 .header
 	z-index: 10
 	position: relative
+	padding-bottom: 20px
+	background: #fff
 	&--first
 		position: absolute
 		width: 1140px
 		left: 50%
 		transform: translateX(-50%)
+		background: transparent
+	&__scroll
+		background: #fff
+		position: fixed
+		top: 0
+		padding-bottom: 20px
+		width: 100%
+		z-index: 100000
+		// &::before
+		// 	content: ''
+		// 	width: 100%
+		// 	position: absolute
+		// 	left: -100%
+		// 	background: #fff
+		// 	height: 100%
+		// 	transition: .4s
+		// &::after
+		// 	content: ''
+		// 	width: 100%
+		// 	position: absolute
+		// 	right: -100%
+		// 	top: 0
+		// 	background: #fff
+		// 	height: 100%
+		// 	transition: .4s
 	&__nav
 		display: flex
 		padding-top: 27px

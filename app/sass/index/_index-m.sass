@@ -45,7 +45,18 @@
             span
                 font-size: 20px
     
-    
+    .realised
+        &__item
+            width: 719px
+        &__itemTitle
+            margin-left: 200px
+        &__boxImage
+            width: 382px
+            left: -220px
+            top: -170px
+        &__bigText
+            left: -250px
+
     
     .documentation-page
         margin-top: 134px
@@ -190,6 +201,99 @@
                 display: none
         &__catalogBtn
             font-size: 15px
+    .realised
+        margin-top: 160px
+        margin-bottom: 40px
+        &__bigText
+            display: none
+        &__nav
+            position: absolute
+            top: 90px
+            height: 30px
+            left: 50%
+            transform: translateX(-50%)
+            span
+                font-size: 25px
+                margin: 4px 0
+        &__block
+            grid-gap: 115px
+        &__currentNum
+            font-size: 25px
+        &__lengthNum
+            font-size: 15px 
+            margin-top: 12px
+        &__prev
+            left: -30px
+            width: 7px
+            top: 26px
+        &__next
+            right: -30px
+            top: 3px
+            width: 7px
+        &__wrap
+            span
+                font-size: 20px
+                text-align: left
+        &__link
+            margin-top: 9px
+        &__item
+            width: 100%
+        //     &--open
+        //         padding-top: 300px
+        &__itemSubtitle
+            margin-left: 0
+            margin: 0 auto
+            font-size: 17px
+            margin-bottom: 40px
+            margin-bottom: 15px
+        &__itemTitle
+            text-align: center
+            margin: 0 auto
+            font-size: 25px
+            margin-top: -120px
+        &__box            
+            width: 100%
+            margin-top: 200px
+            border: 1px solid #000
+            padding: 130px 20px 40px 20px
+
+            // position: static
+            // border: 0
+            // padding: 0 !important
+        &__boxTitle
+            text-align: center
+            font-size: 25px
+            margin-bottom: 17px
+            span
+                display: block
+                font-size: 17px
+        &__boxText
+            font-size: 17px
+            text-align: center
+            margin-top: 17px
+            &:not(:last-child)
+                margin-bottom: 0
+        &__boxTitle
+            margin-bottom: 0
+        &__open
+            left: 50%
+            transform: translateX(-50%)
+            bottom: 0px
+            top: unset
+        &__images
+            img
+                margin: 0 auto
+                display: none
+        &__boxImage
+            display: block !important
+            height: 150px
+            left: 50%
+            width: 250px
+            transform: translate(-50%)
+            top: -170px
+            &--open
+                height: 250px
+                clip-path: unset
     .completed
         margin-top: 100px
         &__nav
@@ -420,8 +524,8 @@
         &__image
             img
                 width: 100%
-                left: 50%
-                top: -150px
+                left: 44%
+                top: -120px
                 transform: translateX(-50%) 
         &__list
             margin-bottom: 50px
@@ -446,7 +550,7 @@
             padding: 100px 35px 40px 35px
         &__image
             width: 484px
-            left: 0
+            left: -20px
             top: -120px
         .first-level
             margin-left: 0

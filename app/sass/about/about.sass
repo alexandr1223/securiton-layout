@@ -247,12 +247,14 @@
         align-items: center
         margin-right: 33px
         font-size: 17px
+        transition: .4s
         span
             width: 54px
             height: 54px
             background: #d7e8d3
             position: relative
             margin-left: 15px
+            transition: .4s
             svg
                 position: absolute
                 top: 50%
@@ -261,6 +263,13 @@
                 fill: #4b8a3b
                 width: 14px
                 height: auto
+                transition: .4s
+        &:hover
+            color: #bababa
+            span
+                background: #7ab36c
+                svg
+                    fill: #fff
 
     &__text
         p
@@ -501,3 +510,14 @@
             &:not(:last-child)
                 margin-bottom: 20px
                 
+.about-group
+    margin-bottom: 25px
+    &__title
+        margin-bottom: 27px
+    &__text
+        p
+            line-height: 25px
+    &__circle
+        img
+            display: block
+            margin: 0 auto
