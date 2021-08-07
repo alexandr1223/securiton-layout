@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     $(window).scroll(function () {
         var height = $(window).scrollTop();
-        if (height > 60) {
+        var docHeight = $( document ).height()
+        if (height > 90 && docHeight > 1200) {
             document.querySelector('.header').classList.add('header__scroll')
         } else {
             document.querySelector('.header').classList.remove('header__scroll')
@@ -64,6 +65,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         this.parentElement.style.cssText = "padding-top: 45px"
                         
                     } else {
+                        
+                        // console.log(this)
+                        document.querySelectorAll('.completed__open').forEach(function (item) {
+                            item.parentElement.querySelector('.completed__nav').classList.remove('completed__nav--open')
+                            item.querySelector('svg').style.cssText = "transform: translate(-50%, -50%) rotate(0deg)"
+                            item.parentElement.querySelector('.completed__images').classList.remove('openCompletedProject')
+                            item.parentElement.querySelector('.completed__boxImage').classList.remove('completed__boxImage--open')
+                            item.parentElement.style.cssText = "padding-top: 45px"
+                            item.classList.remove('active')
+                            // num = 1
+                        })
                         this.classList.add('active')
                         this.parentElement.querySelector('.completed__nav').classList.add('completed__nav--open');
                         // Добавление нумерации картинок
@@ -77,9 +89,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     }
 
                     let box = this.parentElement;
+                    let prev = box.querySelector('.completed__prev')
+                    let next = box.querySelector('.completed__next')
                     box.querySelector('.completed__lengthNum').textContent = '0' + $(box.querySelectorAll('.completed__images img')).length
+
+                    num = box.querySelector('.completed__currentNum').textContent
                     
-                    box.querySelector('.completed__next').addEventListener('click', function(item) {
+                    $(next).off().on('click', function(item) {
+                        console.log(num)
                         let currentItem = box.querySelector('.completed__boxImage');
                         currentItem.classList.remove('completed__boxImage', 'completed__boxImage--open')
                         box.querySelectorAll('.completed__images img')[0].before(currentItem)
@@ -90,28 +107,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         box.querySelectorAll('.completed__images img')[0].before(images)
 
                         // Изменение нумерации изображения
-                        num++;
-                        if (box.querySelectorAll('.completed__images img').length >= num) {
-                            box.querySelector('.completed__currentNum').textContent = '0' + num;
-                        } else {
-                            num = 1;
-                            box.querySelector('.completed__currentNum').textContent = '0' + num;
-                        }
                         
-                    })
-                    box.querySelector('.completed__prev').addEventListener('click', function(item) {
-                        console.log(box.querySelector('.completed__boxImage').nextElementSibling)
-                        box.querySelector('.completed__boxImage').nextElementSibling.classList.add('completed__boxImage', 'completed__boxImage--open')
-                        let currentItem = box.querySelector('.completed__boxImage');
-                        currentItem.classList.remove('completed__boxImage', 'completed__boxImage--open');
-                        box.querySelector('.completed__images').append(currentItem)
-                        // Изменение нумерации изображения
+                        console.log(num)
                         num--;
                         if (num < 1) {
                             num = box.querySelectorAll('.completed__images img').length;
                             box.querySelector('.completed__currentNum').textContent = '0' + num;
                             
                         } else {
+                            box.querySelector('.completed__currentNum').textContent = '0' + num;
+                        }
+                    })
+                    $(prev).off().on('click', function(item) {
+                        // console.log(box.querySelector('.completed__boxImage').nextElementSibling)
+                        // console.log('click')
+                        let currentItem = box.querySelector('.completed__boxImage');
+                        console.log(currentItem)
+                        box.querySelector('.completed__boxImage').nextElementSibling.classList.add('completed__boxImage', 'completed__boxImage--open')
+                        currentItem.classList.remove('completed__boxImage', 'completed__boxImage--open');
+                        box.querySelector('.completed__images').append(currentItem)
+                        // Изменение нумерации изображения
+                        num++;
+                        if (box.querySelectorAll('.completed__images img').length >= num) {
+                            box.querySelector('.completed__currentNum').textContent = '0' + num;
+                        } else {
+                            num = 1;
                             box.querySelector('.completed__currentNum').textContent = '0' + num;
                         }
                     })
@@ -324,7 +344,75 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function productSliderAvailable() {
         let postCount = document.querySelectorAll('.product-available__item').length;
         if (postCount > 3) {
-            document.querySelector('.product-available__block').style.cssText = "overflow-x: scroll;"
+            $('.product-available__block').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 3,
+                arrows: true,
+                variableWidth: true,
+                prevArrow: "<div class='prev'><img src='../img/svg/right-arrow.svg' alt='1'></div>",
+                nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' alt='2'></div>",
+                responsive: [
+                    {
+                      breakpoint: 1200,
+                      settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                      }
+                    },
+                    {
+                      breakpoint: 991,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    },
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    }
+        
+                  ]
+            });
+        } else if (postCount > 2 && document.documentElement.clientWidth < 991) {
+            $('.product-available__block').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 3,
+                arrows: true,
+                variableWidth: true,
+                prevArrow: "<div class='prev'><img src='../img/svg/right-arrow.svg' alt='1'></div>",
+                nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' alt='2'></div>",
+                responsive: [
+                    {
+                      breakpoint: 1200,
+                      settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                      }
+                    },
+                    {
+                      breakpoint: 991,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    },
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    }
+        
+                  ]
+            });
         }
     }
     productSliderAvailable();
@@ -398,6 +486,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 })
                 document.querySelector('.modal-video__close').addEventListener('click', (item) => {
                     document.querySelector('.modal-video').classList.remove('modal-video__show')
+                    document.querySelector('.modal-video__block iframe').src = ''
                 })
             })
         });
@@ -407,7 +496,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // Открытие видео на странице "СПИСОК ПОСТАВЛЯЕМОГО ОБОРУДОВАНИЯ"
     function openVideoOnProductList() {
         $(document).ready(function() {
-            document.querySelectorAll('.equipment__video').forEach(item => {
+            document.querySelectorAll('.equipment__video--link').forEach(item => {
                 item.addEventListener('click', function() {
                     
                     document.querySelector('.modal-video__block iframe').src = this.dataset.link
@@ -420,6 +509,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 })
                 document.querySelector('.modal-video__close').addEventListener('click', (item) => {
                     document.querySelector('.modal-video').classList.remove('modal-video__show')
+                    document.querySelector('.modal-video__block iframe').src = ''
                 })
             })
         });
@@ -429,29 +519,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // Открытие видео на странице "О нас"
     function openVideoOnProductList() {
         $(document).ready(function() {
-            document.querySelectorAll('.equipment__video').forEach(item => {
-                item.addEventListener('click', function() {
-                    
-                    document.querySelector('.modal__block iframe').src = this.dataset.link
-                    document.querySelector('.modal').classList.add('modal__show')
-                })
-                document.querySelector('.modal').addEventListener('click', (item) => {
-                    if (item.target.classList.contains('modal__block')) {
-                        document.querySelector('.modal').classList.remove('modal__show')
-                    }
-                })
-                document.querySelector('.modal__close').addEventListener('click', (item) => {
-                    document.querySelector('.modal').classList.remove('modal__show')
-                })
-            })
-        });
-    }
-    openVideoOnProductList();
-
-    // Открытие видео на странице "Главная"
-    function openProductListVideo() {
-        $(document).ready(function() {
-            document.querySelectorAll('.product-list__video').forEach(item => {
+            document.querySelectorAll('.equipment__video--link').forEach(item => {
                 item.addEventListener('click', function() {
                     
                     document.querySelector('.modal-video__block iframe').src = this.dataset.link
@@ -464,6 +532,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 })
                 document.querySelector('.modal-video__close').addEventListener('click', (item) => {
                     document.querySelector('.modal-video').classList.remove('modal-video__show')
+                })
+            })
+        });
+    }
+    openVideoOnProductList();
+
+    // Открытие видео на странице "Главная"
+    function openProductListVideo() {
+        $(document).ready(function() {
+            document.querySelectorAll('.product-list__video--link').forEach(item => {
+                item.addEventListener('click', function() {
+                    
+                    document.querySelector('.modal-video__block iframe').src = this.dataset.link
+                    document.querySelector('.modal-video').classList.add('modal-video__show')
+                })
+                document.querySelector('.modal-video').addEventListener('click', (item) => {
+                    if (item.target.classList.contains('modal-video__block')) {
+                        document.querySelector('.modal-video').classList.remove('modal-video__show')
+                    }
+                })
+                document.querySelector('.modal-video__close').addEventListener('click', (item) => {
+                    document.querySelector('.modal-video').classList.remove('modal-video__show')
+                    document.querySelector('.modal-video__block iframe').src = ''
                 })
             })
         });
@@ -635,4 +726,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         ]
     });
+
+    
+
+    
 });

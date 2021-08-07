@@ -1,3 +1,9 @@
+@media (max-width: 1600px)
+    .footer
+        &__left
+            padding-left: 100px
+        &__right
+            padding-right: 200px
 @media (max-width: 1200px)
     body
         overflow-x: hidden
@@ -88,9 +94,12 @@
 @media (max-width: 991px)
     .header
         &__nav
-            padding-top: 23px
+            padding-top: 18px
+            padding-bottom: 18px
         &--first
             width: 100%
+        &__scroll
+            padding-bottom: 0
         &__logo
             margin-top: 0
         &__address
@@ -142,8 +151,10 @@
             text-align: center
         &__equipmentText
             text-align: center
-            p
+            a
                 margin-bottom: 4px
+                color: #fff
+                opacity: 1
         &__reserve
             display: none
             &--mobile

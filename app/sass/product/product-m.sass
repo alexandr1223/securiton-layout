@@ -107,9 +107,10 @@
             padding-left: 0
             width: 288px
             padding-bottom: 30px
+            display: block
         &__box
             min-width: 100%
-            width: 100%
+            width: 288px
             margin-left: 10px
             padding: 57px 15px 25px 15px
         &__image
@@ -123,9 +124,11 @@
             font-size: 17px
             margin-bottom: 20px
         &__item
-            min-width: calc(100% - 12px)
-            &:not(:last-child)
-                margin-right: 50px
+            min-width: unset
+            width: 288px
+            max-width: 100%
+            // &:not(:last-child)
+            //     margin-right: 50px
             margin-left: 0
         &__link
             margin: 0 auto
@@ -137,12 +140,16 @@
             margin-left: 40px
         &__text
             p
-                font-size: 15px
+                font-size: 14px
                 text-align: center
         &__box
             min-width: calc(100% - 10px)
             width: calc(100% - 10px)
             min-height: 430px
+        .prev
+            left: -30px
+        .next
+            right: -30px
     .product-content
         &__text
             margin-left: 0

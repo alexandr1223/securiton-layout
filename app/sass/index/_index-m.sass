@@ -1,3 +1,14 @@
+@media (max-width: 1900px)
+    .realised
+        .container
+            position: relative
+        &__bigText
+            left: -280px
+@media (max-width: 1500px)
+    .first
+        &__bigText
+            left: -400px
+            font-size: 130px
 @media (max-width: 1200px)
     .first
         padding-top: 160px
@@ -77,8 +88,10 @@
             margin-top: 30px
             margin-bottom: 45px
         &__img
-            img
+            iframe
                 object-fit: cover
+                height: 453px
+            #contact-map
                 height: 453px
         &__rect
             padding-top: 84px
@@ -182,25 +195,29 @@
             align-items: flex-end
         &__catalogItem
             margin-top: 190px
+            width: 130px
             &--small
-                margin-right: 0
+                margin-right: 18px
                 img
                     display: none
             &--second
                 img
                     position: absolute
-                    left: 50%
+                    left: 40%
                     transform: translateX(-50%)
                     top: 0
         &__catalogBlock
             margin-left: 0
-            padding: 0 10px
+            padding: 0
             &--small                
                 padding-left: 0
             &::before
                 display: none
         &__catalogBtn
-            font-size: 15px
+            padding: 14px 10px
+            text-align: center
+            font-size: 14px
+            width: 100%
     .realised
         margin-top: 160px
         margin-bottom: 40px
@@ -314,11 +331,12 @@
             margin-top: 12px
         &__prev
             margin-right: 20px
-            width: 7px
-            margin-top: 10px
+            width: 20px
+            margin-top: -2px
         &__next
             margin-left: 20px
-            width: 7px
+            margin-top: 4px
+            width: 20px
         &__item
             width: 100%
             border: 1px solid #000
@@ -424,6 +442,7 @@
             margin: 0 10px
             width: 100%
             padding: 0 15px 24px 15px
+            min-height: 380px
         &__itemTitle
             font-size: 17px
             margin-bottom: 20px
@@ -614,8 +633,8 @@
             margin: 0 auto
             margin-top: 20px
             p
-                &:not(:first-child)
-                    display: none
+                // &:not(:first-child)
+                //     display: none
         &__image
             top: -60px
             left: -10px
@@ -628,6 +647,7 @@
             right: 0 
             background: #fff
             color: #7ab36c
+            display: none
         &__info
             display: flex
             flex-direction: column
@@ -652,18 +672,23 @@
         &__title
             margin-bottom: 120px
         &__img
-            display: none
+            position: absolute
+            left: 50%
+            width: 258px
+            z-index: 2
+            transform: translateX(-50%)
+            #contact-map
+                margin: 0 auto
+                width: 258px
+                height: 258px
             &--mobile
-                display: block
+                display: none
                 width: 98%
                 margin: 0 auto
                 position: static
                 margin-top: -250px
                 margin-bottom: 30px
-                img
-                    margin: 0 auto
-                    width: 300px
-                    height: 210px
+                
                 
         &__block
             width: 100%

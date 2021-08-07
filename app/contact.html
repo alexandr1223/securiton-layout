@@ -129,13 +129,10 @@
 			<div class="contact">
 				<div class="container">
 					<div class="contact__img">
-						<img src="img/contact-map.jpeg" alt="">
+						<div id="contact-map"></div>
 					</div>
 					<div class="contact__block">
 						<div class="contact__rect contact__rect--page">
-							<div class="contact__img contact__img--mobile">
-								<img src="img/contact-img-mobile.png" alt="">
-							</div>
 							<ul>
 								<li>
 									<span>Адрес:</span>
@@ -223,34 +220,34 @@
 				<div class="footer__menu">
 					<ul class="footer__list">
 						<li>
-							<a href="#">
+							<a href="about.html">
 								О компании
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="completed-projects.html">
 								Объекты
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="documentation.html">
 								Документация
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="news.html">
 								Новости
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="contact.html">
 								Контакты
 							</a>
 						</li>
 					</ul>
 					<div class="footer__reserve">
 						<span>Copyrights 2021 All Rights Reserved Securiton RUS</span>
-						<span>Сайт разработан <a href="#">AV studio</a></span>
+						<span>Сайт разработан <a href="https://testmesite.ru/">AV studio</a></span>
 					</div>
 				</div>
 				<div class="footer__equipment">
@@ -258,16 +255,16 @@
 						Поставляемое оборудование
 					</div>
 					<div class="footer__equipmentText">
-						<p>Автоматическая пожарная сигнализация</p>
-						<p>Аспирационные системы</p>
-						<p>Термо-дифференциальные системы</p> 
-						<p>Линейные дымовые извещатели</p>
-						<p>Модульные охранные системы</p>
+						<a href="automatic-fire-alarm.html">Автоматическая пожарная сигнализация</a>
+						<a href="aspiration-system.html">Аспирационные системы</a>
+						<a href="thermodifferential-systems.html">Термо-дифференциальные системы</a> 
+						<a href="linear-thermal-detectors.html">Линейные дымовые извещатели</a>
+						<a href="modular-security-systems.html">Модульные охранные системы</a>
 					</div>
 				</div>
 				<div class="footer__reserve footer__reserve--mobile">
 					<span>Copyrights 2021 All Rights Reserved Securiton RUS</span>
-					<span>Сайт разработан <a href="#">AV studio</a></span>
+					<span>Сайт разработан <a href="https://testmesite.ru/">AV studio</a></span>
 				</div>
 			</div>
 			<div class="footer__right">
@@ -295,6 +292,156 @@
 			</div>
 		</footer>
 	</div>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Uo8NZvrfQ5QUJ0Fy93PJqq5tNm6dSWw&amp;callback=initMap" async="" defer=""></script>
+
+	<script>
+		// Initialize and add the map
+		function initMap() {
+		var styles = [
+			{
+			"featureType": "administrative",
+			"elementType": "all",
+			"stylers": [
+				{
+				"saturation": "-100"
+				}
+			]
+			},
+			{
+			"featureType": "administrative.province",
+			"elementType": "all",
+			"stylers": [
+				{
+				"visibility": "off"
+				}
+			]
+			},
+			{
+			"featureType": "landscape",
+			"elementType": "all",
+			"stylers": [
+				{
+				"saturation": -100
+				},
+				{
+				"lightness": 65
+				},
+				{
+				"visibility": "on"
+				}
+			]
+			},
+			{
+			"featureType": "poi",
+			"elementType": "all",
+			"stylers": [
+				{
+				"saturation": -100
+				},
+				{
+				"lightness": "50"
+				},
+				{
+				"visibility": "simplified"
+				}
+			]
+			},
+			{
+			"featureType": "road",
+			"elementType": "all",
+			"stylers": [
+				{
+				"saturation": "-100"
+				}
+			]
+			},
+			{
+			"featureType": "road.highway",
+			"elementType": "all",
+			"stylers": [
+				{
+				"visibility": "simplified"
+				}
+			]
+			},
+			{
+			"featureType": "road.arterial",
+			"elementType": "all",
+			"stylers": [
+				{
+				"lightness": "30"
+				}
+			]
+			},
+			{
+			"featureType": "road.local",
+			"elementType": "all",
+			"stylers": [
+				{
+				"lightness": "40"
+				}
+			]
+			},
+			{
+			"featureType": "transit",
+			"elementType": "all",
+			"stylers": [
+				{
+				"saturation": -100
+				},
+				{
+				"visibility": "simplified"
+				}
+			]
+			},
+			{
+			"featureType": "water",
+			"elementType": "geometry",
+			"stylers": [
+				{
+				"hue": "#ffff00"
+				},
+				{
+				"lightness": -25
+				},
+				{
+				"saturation": -97
+				}
+			]
+			},
+			{
+			"featureType": "water",
+			"elementType": "labels",
+			"stylers": [
+				{
+				"lightness": -25
+				},
+				{
+				"saturation": -100
+				}
+			]
+			}
+		];
+		// The location
+		const office = { lat: 55.73203100074362, lng: 37.62603843622537 };
+		// The map
+		const map = new google.maps.Map(document.getElementById("contact-map"), {
+			zoom: 10,
+			center: office,
+			styles: styles
+		});
+		// The marker
+		const marker = new google.maps.Marker({
+			position: office,
+			map: map,
+			icon: {
+			url: "../img/svg/shield.svg",
+			scaledSize: new google.maps.Size(94, 94)
+			}
+		});
+		}
+	</script>
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
