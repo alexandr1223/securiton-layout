@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         
                     } else {
                         
-                        // console.log(this)
                         document.querySelectorAll('.completed__open').forEach(function (item) {
                             item.parentElement.querySelector('.completed__nav').classList.remove('completed__nav--open')
                             item.querySelector('svg').style.cssText = "transform: translate(-50%, -50%) rotate(0deg)"
@@ -96,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     num = box.querySelector('.completed__currentNum').textContent
                     
                     $(next).off().on('click', function(item) {
-                        console.log(num)
+                        
                         let currentItem = box.querySelector('.completed__boxImage');
                         currentItem.classList.remove('completed__boxImage', 'completed__boxImage--open')
                         box.querySelectorAll('.completed__images img')[0].before(currentItem)
@@ -108,7 +107,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
                         // Изменение нумерации изображения
                         
-                        console.log(num)
                         num--;
                         if (num < 1) {
                             num = box.querySelectorAll('.completed__images img').length;
@@ -119,10 +117,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         }
                     })
                     $(prev).off().on('click', function(item) {
-                        // console.log(box.querySelector('.completed__boxImage').nextElementSibling)
-                        // console.log('click')
                         let currentItem = box.querySelector('.completed__boxImage');
-                        console.log(currentItem)
+                        
                         box.querySelector('.completed__boxImage').nextElementSibling.classList.add('completed__boxImage', 'completed__boxImage--open')
                         currentItem.classList.remove('completed__boxImage', 'completed__boxImage--open');
                         box.querySelector('.completed__images').append(currentItem)
@@ -164,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         this.style.cssText = "display: none"
                         this.parentElement.querySelector('.completed__boxImage').classList.add('completed__boxImage--open')
                         // this.parentElement.querySelector('.completed__images').classList.add('openCompletedProject')
-                        console.log(this.parentElement.parentElement)
+                        
                         this.parentElement.parentElement.style.cssText = "padding-top: 235px"
                         this.parentElement.querySelector('.completed__boxText').style.cssText = "height: auto; visibility: visible"
                         this.parentElement.querySelector('.completed__boxTitle').style.cssText = "height: auto; visibility: visible; margin-bottom: 20px"
@@ -172,9 +168,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     }
 
                     let box = this.parentElement;
+                    let prev = box.querySelector('.completed__prev')
+                    let next = box.querySelector('.completed__next')
                     box.querySelector('.completed__lengthNum').textContent = '0' + $(box.querySelectorAll('.completed__images img')).length
                     
-                    box.querySelector('.completed__next').addEventListener('click', function(item) {
+                    num = box.querySelector('.completed__currentNum').textContent
+
+                    $(next).off().on('click', function(item) {
                         let currentItem = box.querySelector('.completed__boxImage');
                         currentItem.classList.remove('completed__boxImage', 'completed__boxImage--open')
                         box.querySelectorAll('.completed__images img')[0].before(currentItem)
@@ -194,8 +194,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         }
                         
                     })
-                    box.querySelector('.completed__prev').addEventListener('click', function(item) {
-                        console.log(box.querySelector('.completed__boxImage').nextElementSibling)
+                    $(prev).off().on('click', function(item) {
+                        
                         box.querySelector('.completed__boxImage').nextElementSibling.classList.add('completed__boxImage', 'completed__boxImage--open')
                         let currentItem = box.querySelector('.completed__boxImage');
                         currentItem.classList.remove('completed__boxImage', 'completed__boxImage--open');

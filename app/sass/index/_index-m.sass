@@ -131,7 +131,7 @@
         padding: 0 0
     .smalltitle
         font-size: 20px
-        margin: 0 auto
+        margin-right: auto
         line-height: 20px
         width: max-content
         max-width: 220px
@@ -141,7 +141,7 @@
             height: auto
     .title
         font-size: 20px
-        margin: 0 auto
+        margin-right: auto
         line-height: 20px
         width: max-content
         max-width: 260px
@@ -265,12 +265,12 @@
             margin-bottom: 15px
         &__itemTitle
             text-align: center
-            margin: 0 auto
+            margin: 0
             font-size: 25px
             margin-top: -120px
         &__box            
             width: 100%
-            margin-top: 200px
+            margin-top: 210px
             border: 1px solid #000
             padding: 130px 20px 40px 20px
 
@@ -470,32 +470,35 @@
             width: 100%
     .partner
         padding-top: 40px
-        .container  
-            width: 100%
+        margin-bottom: 60px
         &__image
             position: static
             display: flex
-            flex-direction: column-reverse
+            flex-direction: column
         &__pc
             display: none
         &__mobile
             display: block
             background: url('../img/partner-m-main.png') center center/cover no-repeat
-            width: 100%
+            width: auto
             max-width: 414px
             height: 500px
             margin: 0 auto
             margin-bottom: -60px
             margin-top: -170px
+            z-index: 2
+            position: relative
         &__slider
             max-width: 288px
             margin: 0 auto
         &__details
             position: static
-            margin: 0 auto
             max-width: 288px
             display: flex
             width: 200px
+            margin-right: auto
+            margin-bottom: 50px
+            z-index: 5
             &::before
                 position: absolute
                 height: 60px
@@ -512,6 +515,7 @@
             &__num
                 font-size: 62px
                 line-height: 40px
+                margin-top: 5px
                 margin-right: 12px
                 &::before
                     height: 44px
@@ -530,9 +534,9 @@
         &__item
             margin: 0 20px
     .documentation
-        margin-bottom: 60px
+        margin-bottom: 40px
         &__title
-            margin-bottom: 187px
+            margin-bottom: 140px
         &__block
             width: 100%
             max-width: 400px
@@ -670,13 +674,16 @@
             display: flex
             flex-direction: column
         &__title
-            margin-bottom: 120px
+            margin-bottom: 180px
+            margin-top: 0
+            margin-left: 0
         &__img
             position: absolute
             left: 50%
             width: 258px
             z-index: 2
             transform: translateX(-50%)
+            margin-top: -100px
             #contact-map
                 margin: 0 auto
                 width: 258px
@@ -688,6 +695,8 @@
                 position: static
                 margin-top: -250px
                 margin-bottom: 30px
+            &--main
+                margin-top: 60px
                 
                 
         &__block
@@ -696,7 +705,7 @@
         &__rect
             width: 100%
             margin: 0 auto
-            padding: 155px 0px 40px 0px
+            padding: 135px 0px 40px 0px
             ul
                 padding-left:  0
                 margin: 0 auto
