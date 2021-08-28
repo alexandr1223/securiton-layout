@@ -47,6 +47,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 document.querySelector('.sub-menu').classList.add('sub-menu__open')
             }
         })
+        window.addEventListener('scroll', function() {
+            if (document.querySelector('.menu').classList.contains('menu__open')) {
+                document.querySelector('.menu').classList.remove('menu__open')
+                document.querySelector('.header__close').style.cssText = 'display: none'
+            }
+        });
     }
     desktopMenu();
 
@@ -588,39 +594,41 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     showDocumentation();
 
-    $('.product-list__block').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        arrows: true,
-        prevArrow: "<div class='prev'><img src='../img/svg/right-arrow.svg' alt='1'></div>",
-        nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' alt='2'></div>",
-        responsive: [
-            {
-              breakpoint: 1200,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 991,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-
-          ]
-    });
+    if (document.documentElement.clientWidth < 992) {
+        $('.product-list__block').slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 3,
+            arrows: true,
+            prevArrow: "<div class='prev'><img src='../img/svg/right-arrow.svg' alt='1'></div>",
+            nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' alt='2'></div>",
+            responsive: [
+                {
+                  breakpoint: 1200,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 991,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
+    
+            ]
+        });
+    }
 
     $('.sertificate__for').slick({
         slidesToShow: 1,

@@ -25,8 +25,12 @@
         &__block
             grid-template-columns: 1fr 500px
     .product-list
+        &__block
+            grid-template-columns: 1fr 1fr
+            grid-gap: 70px 100px
         &__item
-            margin: 0 80px
+            margin: 0
+            max-width: 400px
         .next
             right: 0
         .prev
@@ -438,6 +442,10 @@
     .product-list
         .slick-track
             padding-top: 50px
+        &__block
+            display: block
+            grid-gap: unset
+            margin-top: 0
         &__item
             margin: 0 10px
             width: 100%
