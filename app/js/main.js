@@ -19,10 +19,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     $(window).scroll(function () {
         var height = $(window).scrollTop();
-        var docHeight = $( document ).height()
-        if (height > 90 && docHeight > 1200) {
+        if (height > 90 && !document.querySelector('.documentation-page')) {
             document.querySelector('.header').classList.add('header__scroll')
-        } else {
+        } else  {
             document.querySelector('.header').classList.remove('header__scroll')
         }
     
